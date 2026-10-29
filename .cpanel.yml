@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+    - /bin/bash tools/deploy-cpanel.sh /home/t6di8s6yfvlr/public_html
