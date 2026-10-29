@@ -2,7 +2,7 @@
 
 A one-page website for **Echelon**, the interschool tech fest run by Bangalore International School in collaboration with Vidyashilp University, for students in Grades 8–12. This repository combines the main site with the earlier editions under `history/`. The History button opens that archive.
 
-This repository has not been deployed. See [INTEGRATION.md](INTEGRATION.md) for the source repositories and edition mapping. The historical validation reports below were inherited from the original main site.
+**Live website: https://bisechelon.in/**. Push changes to `main` to build and deploy automatically (the server checks every minute after a successful build). See [INTEGRATION.md](INTEGRATION.md) for the source repositories and edition mapping. The historical validation reports below were inherited from the original main site.
 
 - The look is black and minimal, with a glowing particle orb, glass panels and a liquid-glass cursor.
 - The intro falls from space to the school through real satellite images (Sentinel-2), then the particles form the word "Echelon".
@@ -291,7 +291,7 @@ To change something on the live site:
 
 1. Edit `content.json`.
 2. Run `node build.js` and check the page with `npm run serve`.
-3. Commit and push, then run the deployment workflow.
+3. Commit and push to `main`. The Build for cPanel workflow builds the page, and cPanel publishes the successful build automatically.
 
 ### Before telling people about it
 

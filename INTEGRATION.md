@@ -15,3 +15,13 @@ The cPanel deployment targets `/home/t6di8s6yfvlr/public_html`, the configured d
 In cPanel Git Version Control, manage the repository, select **Pull or Deploy**, update from the remote, and deploy HEAD. `.cpanel.yml` runs `tools/deploy-cpanel.sh`. The committed `index.html` is already built, so Node.js is not required on the hosting server. The script downloads fonts from Fontshare, backs up the previous public folder under `/home/t6di8s6yfvlr/deploy-backups/`, copies the static assets and archive, then replaces the homepage last. Existing files and URLs are retained. Backups stay outside the public folder.
 
 Rebuild and commit the generated root HTML/JavaScript locally after editing content or templates. Use cPanel to update and redeploy subsequent commits. Check both the homepage and `/history/` after each deployment.
+
+## Automatic updates
+
+Push changes to `main`. The **Build for cPanel** GitHub Actions workflow downloads the build fonts, runs `node build.js`, and commits the generated HTML/JavaScript with a `.cpanel-ready` marker. A failed build does not produce a ready commit, so the existing live site stays in place.
+
+A cPanel cron job runs `tools/auto-deploy-cpanel.sh` every minute. It fetches `main` through the existing read-only SSH deploy key, accepts only a commit with a readiness marker matching its parent, fast-forwards the checkout, and publishes changed website files. Overlapping jobs are locked. Successful deployment is recorded in `https://bisechelon.in/deployment.json`; server logs are in `/home/t6di8s6yfvlr/echelon-auto-deploy.log`.
+
+After the first deployment establishes its state, only files changed since the last successful deployment are compared and copied. Replaced files are backed up under `deploy-backups/`; unchanged media is not copied or backed up again. Existing unrelated files and old asset URLs are retained. The earlier full-site backup is retained.
+
+This is polling, so allow the build time plus up to one minute for detection, followed by file-copy time. Large media uploads take longer. Automatic publication runs directly on the server; the cPanel Git page's Last Deployment entry continues to refer to the most recent deployment launched through that interface.
