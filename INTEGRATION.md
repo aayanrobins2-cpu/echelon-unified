@@ -25,3 +25,11 @@ A cPanel cron job runs `tools/auto-deploy-cpanel.sh` every minute. It fetches `m
 After the first deployment establishes its state, only files changed since the last successful deployment are compared and copied. Replaced files are backed up under `deploy-backups/`; unchanged media is not copied or backed up again. Existing unrelated files and old asset URLs are retained. The earlier full-site backup is retained.
 
 This is polling, so allow the build time plus up to one minute for detection, followed by file-copy time. Large media uploads take longer. Automatic publication runs directly on the server; the cPanel Git page's Last Deployment entry continues to refer to the most recent deployment launched through that interface.
+
+The installed Cron Jobs entry uses `*` in all five schedule fields and this command:
+
+```sh
+/bin/bash /home/t6di8s6yfvlr/repositories/echelon-unified/tools/auto-deploy-cpanel.sh >> /home/t6di8s6yfvlr/echelon-auto-deploy.log 2>&1
+```
+
+The command logs to the hosting account rather than sending an email each minute. An idle check does not copy files or create a backup. To pause automatic publication, disable this specific entry in cPanel Cron Jobs; GitHub builds can remain enabled.
