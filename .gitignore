@@ -1,0 +1,10 @@
+node_modules/
+.playwright-mcp/
+
+# Fontshare fonts: free to use on the site, but the licence does not allow
+# sharing the files on their own. Run "npm run fonts" to download them.
+assets/fonts/fontshare/*.woff2
+
+# Made by the deploy workflow
+_site/
+.cache/

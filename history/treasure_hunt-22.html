@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <title>Treasure Hunt - Echelon</title>
+</head>
+<body>
+
+    <header>
+        <h1>Treasure Hunt</h1>
+        <nav>
+            <a href="Homepage2022.html">Back to Main</a>
+        </nav>
+    </header>
+
+    <section class="event-hero">
+        <img src="Images23/TreasureHunt/treasure_hunt_banner.jpg" alt="Treasure Hunt Banner">
+    </section>
+
+    <section id="about-event">
+        <h2>About Treasure Hunt</h2>
+        <p>Use your deciphering skill and find the code to get the path in MSW Logo. Use the Map to find the Treasure.</p>
+    </section>
+
+    <section id="event-rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Number of teams per school: 2</li>
+            <li>Number of participants: minimum 2, maximum 4</li>
+            <li>Prior Knowledge: MSW Logo</li>
+            <li>Grade Level: 9-12</li>
+        </ul>
+    </section>
+
+    <section id="event-gallery">
+        <h2>Event Images</h2>
+
+        <!-- Slick Slideshow for Gallery Images -->
+        <div class="slick-slider">
+            <!-- Add your gallery images here -->
+            <img src="Images22/TreasureHunt/treasure_hunt_1.jpg" alt="Treasure Hunt Image 1">
+            <img src="Images22/TreasureHunt/treasure_hunt_2.jpg" alt="Treasure Hunt Image 2">
+            <img src="Images22/TreasureHunt/treasure_hunt_3.jpg" alt="Treasure Hunt Image 3">
+            <img src="Images22/TreasureHunt/treasure_hunt_4.jpg" alt="Treasure Hunt Image 4">
+            <img src="Images22/TreasureHunt/treasure_hunt_5.jpg" alt="Treasure Hunt Image 5">
+            <img src="Images22/TreasureHunt/treasure_hunt_6.jpg" alt="Treasure Hunt Image 6">
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Echelon Event. Return to<a href="Homepage2022.html"> Main Page</a>.</p>
+    </footer>
+
+    <!-- Add jQuery and Slick's JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true, // Enable dots pagination
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                // You can add more settings here based on your preferences
+            });
+        });
+    </script>
+
+</body>
+</html>

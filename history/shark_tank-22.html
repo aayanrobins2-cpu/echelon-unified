@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Shark Tank - Echelon</title>
+</head>
+<body>
+
+    <header>
+        <h1>Shark Tank</h1>
+        <nav>
+            <a href="Homepage2022.html"> Back to Main </a>
+        </nav>
+    </header>
+
+    <section class="event-hero">
+        <img src="Images22\SharkTank\shark_tank_banner.jpg" alt="Shark Tank Banner">
+    </section>
+
+    <section id="about-event">
+        <h2>About Shark Tank</h2>
+        <p>This event is recreating the famous TV show "Shark Tank". But the ideas should be related to the 10th SDG of the UN, i.e., "Reducing Inequalities" . It could be an App or Project plan or even a Business Plan aiming to diversify education towards all groups. The Team should talk about the proposal and submit a word document of their proposal.</p>
+    </section>
+
+    <section id="event-rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Teams must create a product or service pitch.</li>
+            <li>Number of teams per school: Maximum 2</li>
+            <li>Number of participants per team: Minimum 1, Maximum 2</li>
+            <li>Grade Level: 9-12</li>
+        </ul>
+    </section>
+
+    <section id="event-gallery">
+        <h2>Event Images</h2>
+        
+        <div class="slick-slider">
+            <!-- Add your gallery images here -->
+            <img src="Images22/SharkTank/shark_tank_1.jpg" alt="Shark Tank Image 1">
+            <img src="Images22/SharkTank/shark_tank_2.jpg" alt="Shark Tank Image 2">
+            <img src="Images22/SharkTank/shark_tank_3.jpg" alt="Shark Tank Image 3">
+            <img src="Images22/SharkTank/shark_tank_4.jpg" alt="Shark Tank Image 4">
+            <img src="Images22/SharkTank/shark_tank_5.jpg" alt="Shark Tank Image 5">
+            <!-- ... continue to add more Images22 ... -->
+            <img src="Images22/SharkTank/shark_tank_6.jpg" alt="Shark Tank Image 6">
+            <img src="Images22/SharkTank/shark_tank_7.jpg" alt="Shark Tank Image 7">
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Echelon Event. Return to <a href="Homepage2022.html"> Main Page</a>.</p>
+    </footer>
+
+    <!-- Add jQuery and Slick's JS if using Slick for the gallery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick if using Slick for the gallery -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true, // Enable dots pagination
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                // You can add more settings here based on your preferences
+            });
+        });
+    </script>
+</body>
+</html>

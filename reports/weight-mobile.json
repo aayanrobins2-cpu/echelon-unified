@@ -1,0 +1,62 @@
+{
+  "total": 1289911,
+  "files": 15,
+  "list": [
+    {
+      "name": "js/main.js?v=f5ec8a7c00",
+      "bytes": 28965
+    },
+    {
+      "name": "assets/intro/earth-0-1920.avif",
+      "bytes": 101521
+    },
+    {
+      "name": "assets/intro/earth-1-1920.avif",
+      "bytes": 107537
+    },
+    {
+      "name": "",
+      "bytes": 0
+    },
+    {
+      "name": "assets/fonts/fontshare/cabinet-grotesk-500.woff2",
+      "bytes": 300
+    },
+    {
+      "name": "assets/fonts/fontshare/satoshi-variable.woff2",
+      "bytes": 300
+    },
+    {
+      "name": "assets/fonts/dseg/DSEG7Classic-Bold.woff2",
+      "bytes": 5432
+    },
+    {
+      "name": "js/vendor/gsap.min.js?v=3.15.0",
+      "bytes": 28720
+    },
+    {
+      "name": "assets/favicon.svg",
+      "bytes": 889
+    },
+    {
+      "name": "js/vendor/ScrollTrigger.min.js?v=3.15.0",
+      "bytes": 18303
+    },
+    {
+      "name": "assets/intro/earth-2-1920.avif",
+      "bytes": 76517
+    },
+    {
+      "name": "assets/intro/earth-3-1920.avif",
+      "bytes": 198882
+    },
+    {
+      "name": "assets/intro/earth-4-1920.avif",
+      "bytes": 307862
+    },
+    {
+      "name": "assets/intro/earth-5-1920.avif",
+      "bytes": 393131
+    }
+  ]
+}

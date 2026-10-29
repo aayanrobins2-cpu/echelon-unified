@@ -1,0 +1,394 @@
+{
+  "_howto": "All text and images on the site come from this file. Edit it, then run `node build.js` to rebuild index.html. Anything written as [PLACEHOLDER: ...] has not been confirmed yet; `node build.js` lists every placeholder that is left.",
+  "_source": "Event details, times, rooms and the day's programme are from the Echelon 4.0 programme document (\"Echelon 4.0 – High School Competitions\", October 2026). Team size (3) and teams per school (up to 2) and the registration form are from Nihal on 29 October 2026, and match the Echelon 4.0 registration form. The contact email (malarvizhi@bischool.in) is from Nihal on 29 October 2026. Prize amounts are left out on purpose.",
+
+  "settings": {
+    "_note": "Turn effects off for every visitor by setting a value to false, then rebuild. Visitors can also switch effects off themselves with the Effects button.",
+    "intro": true,
+    "effects": true,
+    "customCursor": true,
+    "scrollAnimations": true
+  },
+
+  "site": {
+    "title": "Echelon | Interschool tech fest at Bangalore International School",
+    "description": "Echelon is an interschool tech fest for students in Grades 8–12, run by Bangalore International School in collaboration with Vidyashilp University. Eight events to code, build, pitch and race.",
+    "url": "https://bisechelon.in",
+    "language": "en-IN"
+  },
+
+  "event": {
+    "name": "Echelon",
+    "presenter": "Bangalore International School presents",
+    "tagline": "Like migrating birds, we rise in formation.",
+    "taglineHighlight": "in formation.",
+    "summary": "The interschool tech fest for Grades 8–12. Eight events to code, build, pitch and race, run in collaboration with Vidyashilp University.",
+    "date": "2026-11-21T08:15:00+05:30",
+    "_dateHelp": "Set date to an ISO date with the India offset, for example 2027-01-16T08:30:00+05:30. Leave it empty to show 'Date to be announced'.",
+    "dateText": "Saturday, 21 November 2026",
+    "timeText": "8:15 am to 2:30 pm",
+    "startTime": "08:15",
+    "endTime": "14:30",
+    "venue": "Bangalore International School",
+    "grades": "Grades 8–12",
+    "registrationUrl": "https://forms.gle/8Ep95jpnQw79zmYX7",
+    "registrationLabel": "Register on Google Forms"
+  },
+
+  "ui": {
+    "skipToContent": "Skip to content",
+    "skipIntro": "Skip intro",
+    "menu": "Menu",
+    "close": "Close",
+    "register": "Register",
+    "registerTeam": "Register your team",
+    "seeEvents": "Explore the events",
+    "history": "History",
+    "historyUrl": "history/",
+    "details": "Details",
+    "opensInNewTab": "(opens in a new tab)",
+    "scrollHint": "Scroll to explore",
+    "countdownLabel": "Time until Echelon starts",
+    "countdownUnits": ["Days", "Hours", "Minutes", "Seconds"],
+    "countdownTba": "Date to be announced",
+    "countdownStarts": "{name} starts on {date} at {time}.",
+    "countdownLive": "Echelon is happening now",
+    "introLines": ["Bangalore International School", "presents"],
+    "introPlaces": ["India", "South India", "Bengaluru"],
+    "introWords": ["Code.", "Build.", "Compete."]
+  },
+
+  "nav": [
+    { "label": "About", "href": "#about" },
+    { "label": "How it works", "href": "#how" },
+    { "label": "Events", "href": "#events" },
+    { "label": "Schedule", "href": "#schedule" },
+    { "label": "FAQ", "href": "#faq" }
+  ],
+
+  "glance": {
+    "label": "Echelon at a glance",
+    "stats": [
+      { "value": "8", "label": "events to choose from" },
+      { "value": "3", "label": "hours of competition" },
+      { "value": "8–12", "label": "grades taking part" }
+    ]
+  },
+
+  "about": {
+    "statement": "Code it. Build it. Pitch it. Race it.",
+    "statementHighlight": "Race it.",
+    "heading": "Built for students who like making things work",
+    "paragraphs": [
+      "Echelon is an interschool tech fest run by Bangalore International School in collaboration with Vidyashilp University.",
+      "Students in Grades 8–12 form teams, represent their school and compete in hands-on events, from tracing code to break out of an escape room to building an expert system in Prolog and racing a drone through a course."
+    ],
+    "image": {
+      "src": "assets/photos/board-1600.webp",
+      "srcSmall": "assets/photos/board-960.webp",
+      "width": 1600,
+      "height": 1067,
+      "alt": ""
+    },
+    "name": {
+      "heading": "Every letter stands for something",
+      "_help": "From the official Echelon logo. Keep one word per letter of ECHELON, in order; the build checks this. The same words are drawn around the logo in src/logo.js (WORDS).",
+      "words": ["Embrace", "Cultural", "Harmony", "Equality", "Languages", "Openness", "Nuances"]
+    },
+    "cards": [
+      { "icon": "spark", "title": "Eight ways to compete", "text": "Code breaking, logic puzzles, web and game design, building with e-waste, drone racing, app pitches and AI with Prolog." },
+      { "icon": "team", "title": "Teams from your school", "text": "Team up with classmates and go up against students from other schools." },
+      { "icon": "campus", "title": "One day on campus", "text": "Everything happens at Bangalore International School, from 8:15 am to 2:30 pm. Breakfast and lunch are provided." }
+    ]
+  },
+
+  "howItWorks": {
+    "heading": "From sign-up to showtime",
+    "steps": [
+      { "title": "Pick your events", "text": "Eight events, from breaking code in an escape room to racing a drone. Each card lists its time, its room and what you need to know." },
+      { "title": "Form a team", "text": "Teams of three. Each school can enter up to two teams in every event." },
+      { "title": "Register", "text": "Sign your team up on the official registration form." },
+      { "title": "Compete", "text": "Report at Bangalore International School by 8:15 am and compete against other schools." }
+    ]
+  },
+
+  "events": {
+    "heading": "Eight events. Pick yours.",
+    "intro": "Every event has its own time and room. Open the details for the rules and what to bring.",
+    "labels": {
+      "grades": "Grades",
+      "time": "Time",
+      "venue": "Where",
+      "teamSize": "Team size",
+      "teamsPerSchool": "Teams per school",
+      "duration": "Duration",
+      "priorKnowledge": "You should know",
+      "resources": "Equipment",
+      "about": "How it works",
+      "rules": "Good to know"
+    },
+    "items": [
+      {
+        "id": "escape-room",
+        "name": "Escape Room – Code Breakers",
+        "icon": "key",
+        "palette": ["#FF7A3D", "#FF4D8D", "#3A0F2E"],
+        "summary": "Trace the code, work out its output and break your way through the challenge.",
+        "grades": "8–12",
+        "time": "9:30–10:00 am",
+        "venue": "First Floor Computer Lab",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "Trace tables, and pseudocode, Python or Java (your choice)",
+        "resources": "",
+        "about": [
+          "Solve programming challenges using trace tables.",
+          "Questions may use pseudocode, Python or Java, in the language your team chooses.",
+          "Analyse the code, trace its execution and arrive at the correct output to progress through the challenge."
+        ],
+        "rules": []
+      },
+      {
+        "id": "treasure-hunt",
+        "name": "Treasure Hunt – Logic & Discovery",
+        "icon": "compass",
+        "palette": ["#FFB547", "#FF7A3D", "#3A1F05"],
+        "summary": "Crack codes, puzzles and graphs to uncover the clues and reach the final destination.",
+        "grades": "8–12",
+        "time": "10:15–10:45 am",
+        "venue": "Starts in the First Floor Computer Lab",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "Logical thinking and problem solving",
+        "resources": "",
+        "about": [
+          "Put your logical thinking and problem-solving skills to the test.",
+          "Solve a series of challenges that may include decryption, logic puzzles, mathematical reasoning and graphing tasks.",
+          "Each one uncovers a clue that leads you on to the final destination."
+        ],
+        "rules": []
+      },
+      {
+        "id": "web-designing",
+        "name": "Web Designing",
+        "icon": "browser",
+        "palette": ["#FF4D8D", "#FFB547", "#3A0B1E"],
+        "summary": "Design and build a website from scratch with HTML and a scripting language of your choice.",
+        "grades": "8–12",
+        "time": "9:30–11:30 am",
+        "venue": "Ground Floor Computer Lab",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "HTML and a scripting language of your choice",
+        "resources": "Bring all your images, audio and video files saved on your device",
+        "about": [
+          "Design and develop a website using HTML and any scripting language you like."
+        ],
+        "rules": [
+          "Pre-designed templates and AI tools aren’t allowed.",
+          "Internet access is turned off during the competition.",
+          "Bring every resource you need, including images, audio and video, saved locally on your devices."
+        ]
+      },
+      {
+        "id": "game-design",
+        "name": "Game Designing",
+        "icon": "gamepad",
+        "palette": ["#33D1FF", "#3D7BFF", "#0B1640"],
+        "summary": "Create an original game on the platform of your choice, then show the judges how it works.",
+        "grades": "8–12",
+        "time": "9:30–11:30 am",
+        "venue": "Ground Floor Computer Lab",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "A game-making platform of your choice",
+        "resources": "Bring your own device, or use the Windows PCs in the lab",
+        "about": [
+          "Create an original game using any gaming platform you like.",
+          "Demonstrate your game, and explain its code, logic and how it works, to the assessment panel."
+        ],
+        "rules": [
+          "AI tools aren’t allowed, and this is monitored."
+        ]
+      },
+      {
+        "id": "e-waste",
+        "name": "E-Waste to Innovation – Product Design",
+        "icon": "recycle",
+        "palette": ["#3DDC97", "#33D1FF", "#06291F"],
+        "summary": "Turn electronic waste into a useful, innovative or sustainable product.",
+        "grades": "8–12",
+        "time": "9:30 am–12 noon",
+        "venue": "First Floor AV Room",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "",
+        "resources": "Bring your own materials, mainly e-waste",
+        "about": [
+          "Transform electronic waste into a useful, innovative or sustainable product.",
+          "Build a working product or prototype during the competition."
+        ],
+        "rules": [
+          "Products are judged on creativity, usefulness, sustainability and how well you use your materials."
+        ]
+      },
+      {
+        "id": "drone-race",
+        "name": "Drone Racing – Precision Challenge",
+        "icon": "drone",
+        "palette": ["#3D7BFF", "#A259FF", "#0C0B3A"],
+        "summary": "Fly your drone through the course with precision, stability and control.",
+        "grades": "8–12",
+        "time": "9:30 am–12:30 pm",
+        "venue": "Fifth Floor Dance Room",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "Flying a drone",
+        "resources": "Your own drone and fully charged batteries; spares strongly advised",
+        "about": [
+          "Navigate your drone through the designated course, showing precision, stability and control.",
+          "You’re assessed on navigation accuracy, steadiness and control, following the competition rules."
+        ],
+        "rules": [
+          "Drones can be at most 30 cm × 30 cm.",
+          "One drone can be shared by more than one team.",
+          "Bring fully charged batteries. Spare drones and batteries are strongly advised.",
+          "The school doesn’t provide drones or batteries."
+        ]
+      },
+      {
+        "id": "shark-tank",
+        "name": "Shark Tank – The App Innovation Pitch",
+        "icon": "fin",
+        "palette": ["#A259FF", "#FF4D8D", "#1F0B3A"],
+        "summary": "Pitch an app that solves a real-world problem to the jury.",
+        "grades": "8–12",
+        "time": "9:30 am–12 noon",
+        "venue": "Second Floor AV Room",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "3–5 minutes per pitch",
+        "priorKnowledge": "",
+        "resources": "Your own device, a pen drive, or Google Slides shared in advance",
+        "about": [
+          "Have an app idea that solves a real-world problem? Identify an unmet need, propose your solution and pitch it to the jury.",
+          "Present your app concept, the problem it addresses, its target users and how your solution adds value."
+        ],
+        "rules": [
+          "You get 3 to 5 minutes to present.",
+          "Bring your presentation on your own device or a pen drive, or share your Google Slides, with your team name and school name, with mahenthren@bischool.in before 19 November 2026."
+        ]
+      },
+      {
+        "id": "ai-prolog",
+        "name": "Artificial Intelligence – Prolog Expert System Challenge",
+        "icon": "logic",
+        "palette": ["#7CF5D0", "#3D7BFF", "#06233A"],
+        "summary": "Build a knowledge-based expert system in SWI-Prolog that reasons its way to answers.",
+        "grades": "8–12",
+        "time": "9:30 am–12 noon",
+        "venue": "Robotics and AI Labs",
+        "teamSize": "3 students",
+        "teamsPerSchool": "Up to 2",
+        "duration": "",
+        "priorKnowledge": "SWI-Prolog",
+        "resources": "",
+        "about": [
+          "Design and develop a knowledge-based expert system using SWI-Prolog.",
+          "Create a knowledge base of facts and logical rules for a domain of your choice.",
+          "Demonstrate how your system answers a set of queries by reasoning over the knowledge base."
+        ],
+        "rules": [
+          "Systems are assessed on the accuracy and relevance of their facts, the correctness of their rules, how well they infer conclusions from queries, and how well your team understands the logic.",
+          "Be ready to demonstrate your program and explain how your expert system works to the assessment panel."
+        ]
+      }
+    ]
+  },
+
+  "schedule": {
+    "heading": "One day on campus",
+    "intro": "The clock runs from reporting time to prize distribution as you scroll.",
+    "beforeLabel": "Before event day",
+    "before": [
+      { "title": "Register your teams", "text": "Sign up on the official registration form." },
+      { "title": "Shark Tank slides", "text": "Pitching from Google Slides? Share them, with your team name and school name, with mahenthren@bischool.in before 19 November 2026." }
+    ],
+    "dayLabel": "On the day",
+    "day": [
+      { "time": "08:15", "title": "Reporting, registration and breakfast", "text": "Teams arrive, check in and have breakfast, until 9:00 am." },
+      { "time": "09:00", "title": "Opening ceremony", "text": "Echelon 4.0 opens, until 9:30 am." },
+      { "time": "09:30", "title": "Competitions begin", "text": "Seven events start at 9:30 and finish between 10:00 am and 12:30 pm. Treasure Hunt runs from 10:15 to 10:45 am." },
+      { "time": "12:45", "title": "Lunch", "text": "Lunch is provided, until 1:20 pm." },
+      { "time": "13:30", "title": "Prize distribution", "text": "Winners are announced, until 2:30 pm." }
+    ],
+    "_dayNote": "From the Echelon 4.0 programme document. Each event's own time and room are on its card."
+  },
+
+  "partners": {
+    "heading": "Organised by",
+    "items": [
+      {
+        "name": "Bangalore International School",
+        "role": "Host school",
+        "logo": "assets/logos/bis-emblem.webp",
+        "logoAlt": "Bangalore International School emblem",
+        "width": 193,
+        "height": 175,
+        "url": ""
+      },
+      {
+        "name": "Vidyashilp University",
+        "role": "In collaboration with",
+        "logo": "assets/logos/vidyashilp-university.webp",
+        "logoAlt": "Vidyashilp University logo",
+        "width": 298,
+        "height": 106,
+        "url": "https://vidyashilp.edu.in/"
+      }
+    ]
+  },
+
+  "faq": {
+    "heading": "Questions, answered",
+    "columns": ["Taking part", "On the day"],
+    "items": [
+      { "column": 0, "q": "Who can take part?", "a": "Students in Grades 8–12." },
+      { "column": 0, "q": "How do we register?", "a": "Through the official registration form linked on this page. It opens in a new tab. This website doesn't collect any details itself." },
+      { "column": 0, "q": "How big is a team, and how many can a school send?", "a": "Every team has three students, and each school can enter up to two teams in each event." },
+      { "column": 0, "q": "Are AI tools allowed?", "a": "Not in Web Designing or Game Designing, where it's monitored. Web Designing also bans pre-designed templates and turns the internet off." },
+      { "column": 1, "q": "When and where is it?", "a": "On Saturday, 21 November 2026, at Bangalore International School. Report by 8:15 am. The day ends with prize distribution, from 1:30 to 2:30 pm." },
+      { "column": 1, "q": "Is food provided?", "a": "Yes. Breakfast (8:15 to 9:00 am) and lunch (12:45 to 1:20 pm) are provided." },
+      { "column": 1, "q": "What should we bring?", "a": "Web Designing: all your images, audio and video saved on your device, as there's no internet. Game Designing: your own device, or use the lab's Windows PCs. E-Waste to Innovation: your own materials, mainly e-waste. Drone Racing: your drone (at most 30 × 30 cm) with fully charged batteries, plus spares; the school doesn't provide any. Shark Tank: your slides on a device or pen drive, or shared in advance." },
+      { "column": 1, "q": "Who do we contact with questions?", "a": "Email the organising team at malarvizhi@bischool.in." }
+    ]
+  },
+
+  "register": {
+    "heading": "Bring your best team.",
+    "headingHighlight": "best team.",
+    "text": "Registration happens on the official Google Form, which opens in a new tab.",
+    "button": "Register on Google Forms",
+    "pendingButton": "Registration form coming soon",
+    "privacy": "This website doesn't collect or store any personal data."
+  },
+
+  "contact": {
+    "heading": "Contact",
+    "text": "For updates and questions, contact",
+    "name": "the Echelon team",
+    "email": "malarvizhi@bischool.in"
+  },
+
+  "footer": {
+    "copyright": "Bangalore International School. All rights reserved.",
+    "note": "An interschool tech fest by Bangalore International School in collaboration with Vidyashilp University.",
+    "credit": "Satellite images in the intro: contains modified Copernicus Sentinel data 2020 and 2026, 2020 data processed by Sentinel Hub."
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Escape Room - Echelon</title>
+</head>
+<body>
+
+    <header>
+        <h1>Escape Room</h1>
+        <nav>
+            <a href="Homepage2022.html">Back to Main</a>
+        </nav>
+    </header>
+
+    <section class="event-hero">
+        <img src="Images23\EscapeRoom\escape_room_1.jpg" alt="Escape Room Banner">
+    </section>
+
+    <section id="about-event">
+        <h2>About Escape Room</h2>
+        <p>A team of 4 students will be locked in a glass room and will have to fix errors in 5 programs (Java or Python) to unlock a final clue as to where the key is kept. They will use this key to escape from the room.</p>
+    </section>
+
+    <section id="event-rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Number of teams per school: 2(Max)</li>
+            <li>Number of participants: minimum 2, maximum 4</li>
+            <li>Duration: 25 mins</li>
+            <li>Resources: Programs will be run from desktops/laptops in school.</li>
+            <li>Prior Knowledge: Java or Python</li>
+            <li>Grade Level: 9-12</li>
+        </ul>
+    </section>
+
+    <section id="event-gallery">
+        <h2>Event Images</h2>
+        
+        <!-- Slick Slideshow for Gallery Images -->
+        <div class="slick-slider">
+            <!-- Just list the images, no need to wrap in slide divs for Slick -->
+            <img src="Images22/EscapeRoom/escape_room_1.jpg" alt="Escape Room Image 1">
+            <img src="Images22/EscapeRoom/escape_room_2.jpg" alt="Escape Room Image 2">
+            <img src="Images22/EscapeRoom/escape_room_3.jpg" alt="Escape Room Image 3">
+            <img src="Images22/EscapeRoom/escape_room_4.jpg" alt="Escape Room Image 4">
+            <img src="Images22/EscapeRoom/escape_room_5.jpg" alt="Escape Room Image 5">
+           
+           
+</section>
+            <!-- ... continue to add until escape_room_18.jpg ... -->
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Echelon Event. Return to <a href="Homepage2022.html"> Main Page</a>.</p>
+    </footer>
+
+    <!-- Add jQuery and Slick's JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true, // Enable dots pagination
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                // You can add more settings here based on your preferences
+            });
+        });
+    </script>
+
+</body>
+</html>

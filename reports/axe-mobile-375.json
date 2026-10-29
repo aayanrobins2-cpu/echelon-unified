@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:8790/#events",
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "nodes": 55
+    }
+  ]
+}

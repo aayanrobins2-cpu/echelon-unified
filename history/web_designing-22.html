@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <title>Web Designing - Echelon</title>
+</head>
+<body>
+
+    <header>
+        <h1>Web Designing</h1>
+        <nav>
+            <a href="Homepage2022.html">Back to Main</a>
+        </nav>
+    </header>
+
+    <section class="event-hero">
+        <img src="Images23/WebDesigning/web_designing_banner.jpg" alt="Web Designing Banner">
+    </section>
+
+    <section id="about-event">
+        <h2>About Web Designing</h2>
+        <p>Students will create a website with the theme of embracing diversity using simple HTML, CSS, and JS knowledge.</p>
+    </section>
+
+    <section id="event-rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Only HTML/CSS/JS Code, no Google sites or WIX allowed</li>
+            <li>Number of teams per school: 2 Max</li>
+            <li>Number of participants: 2</li>
+            <li>Grade Level: 6-8</li>
+        </ul>
+    </section>
+
+    <section id="event-gallery">
+        <h2>Event Images</h2>
+
+        <!-- Slick Slideshow for Gallery Images -->
+        <div class="slick-slider">
+            <!-- Add your gallery images here -->
+            <img src="Images23/WebDesigning/web_designing_1.jpg" alt="Web Designing Image 1">
+            <img src="Images23/WebDesigning/web_designing_2.jpg" alt="Web Designing Image 2">
+            <img src="Images23/WebDesigning/web_designing_3.jpg" alt="Web Designing Image 3">
+            <img src="Images23/WebDesigning/web_designing_4.jpg" alt="Web Designing Image 4">
+            <img src="Images23/WebDesigning/web_designing_5.jpg" alt="Web Designing Image 5">
+            <img src="Images23/WebDesigning/web_designing_6.jpg" alt="Web Designing Image 6">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Echelon Event. Return to<a href="Homepage2022.html"> Main Page</a>.</p>
+    </footer>
+
+    <!-- Add jQuery and Slick's JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true, // Enable dots pagination
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                // You can add more settings here based on your preferences
+            });
+        });
+    </script>
+
+</body>
+</html>

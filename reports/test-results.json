@@ -1,0 +1,422 @@
+[
+  {
+    "name": "1. JavaScript turned off (375 px)",
+    "checks": [
+      {
+        "label": "main heading renders",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "intro is not shown",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "all 8 event cards render",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules use <details> (no JS needed)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules open in place",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "8 FAQ questions render",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FAQ answer opens",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "nav links are reachable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "countdown falls back to the date text",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "\"How it works\" shows the still illustration",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "the hero shows the still orb",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no sideways scrolling",
+        "pass": true,
+        "detail": "-15px"
+      }
+    ]
+  },
+  {
+    "name": "2. prefers-reduced-motion: reduce (375 px and 1440 px)",
+    "checks": [
+      {
+        "label": "[375] effects start switched off",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] no intro",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] scroll library not even downloaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] no custom cursor",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] \"How it works\" is not pinned or scrubbed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] event marquee stands still",
+        "pass": true,
+        "detail": "none"
+      },
+      {
+        "label": "[375] no shimmer on the gold line",
+        "pass": true,
+        "detail": "none"
+      },
+      {
+        "label": "[375] no sideways scrolling",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[375] axe: no violations with reduced motion",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] effects start switched off",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] no intro",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] scroll library not even downloaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] no custom cursor",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] \"How it works\" is not pinned or scrubbed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "[1440] event marquee stands still",
+        "pass": true,
+        "detail": "none"
+      },
+      {
+        "label": "[1440] no shimmer on the gold line",
+        "pass": true,
+        "detail": "none"
+      },
+      {
+        "label": "[1440] no sideways scrolling",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  {
+    "name": "3. Phone, touch screen, effects on (375 px)",
+    "checks": [
+      {
+        "label": "intro shows with a Skip button from the first frame",
+        "pass": true,
+        "detail": "skip visible at 303 ms"
+      },
+      {
+        "label": "Skip removes the intro",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "the intro plays again on every refresh",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "Skip works again after a refresh",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no custom cursor on touch screens",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no sideways scrolling",
+        "pass": true,
+        "detail": "0px"
+      },
+      {
+        "label": "page weight at load under 3 MB",
+        "pass": true,
+        "detail": "1260 KB in 15 files"
+      },
+      {
+        "label": "\"How it works\" is pinned for scrubbing",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "text over the hero art meets WCAG AA (375 px, scrolled 0px)",
+        "pass": true,
+        "detail": "4 text blocks, lowest 8.16:1 (p.hero__summary \"The interschool tech fest fo\")"
+      },
+      {
+        "label": "text over the hero art meets WCAG AA (375 px, scrolled 520px)",
+        "pass": true,
+        "detail": "16 text blocks, lowest 5.32:1 (p.lcd__label \"Time until Echelon starts\")"
+      },
+      {
+        "label": "menu opens",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tapping a menu link closes the menu",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "a frame is drawn while scrolling the pinned section",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "page weight after scrolling everything",
+        "pass": true,
+        "detail": "1294 KB in 19 files"
+      },
+      {
+        "label": "axe: no violations (375 px)",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  {
+    "name": "4. Desktop with mouse and keyboard (1440 px)",
+    "checks": [
+      {
+        "label": "intro finishes by itself in about 20 s",
+        "pass": true,
+        "detail": "20822 ms after navigation"
+      },
+      {
+        "label": "intro progress reached 100%",
+        "pass": true,
+        "detail": "100%"
+      },
+      {
+        "label": "glass cursor appears with a mouse",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "the lens stays on the pointer while moving fast",
+        "pass": true,
+        "detail": "largest gap 0.0 px over 16 frames"
+      },
+      {
+        "label": "the lens flows into the shape of a button",
+        "pass": true,
+        "detail": "lens 199px wide over a 187px button"
+      },
+      {
+        "label": "native cursor comes back when the pointer leaves",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "first Tab lands on \"Skip to content\"",
+        "pass": true,
+        "detail": "Skip to content"
+      },
+      {
+        "label": "focus is visible",
+        "pass": true,
+        "detail": "solid"
+      },
+      {
+        "label": "skip link moves focus to the main content",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "every link and button shows a focus outline",
+        "pass": true,
+        "detail": "31 checked"
+      },
+      {
+        "label": "Enter on \"View rules\" opens the rules dialog",
+        "pass": true,
+        "detail": "Escape Room – Code Breakers"
+      },
+      {
+        "label": "focus moves to the dialog title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "Tab stays inside the open dialog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "axe: no violations with the dialog open",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "Esc closes the dialog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "focus returns to the button that opened it",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FAQ opens with the keyboard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no Effects switch, and effects are on",
+        "pass": true,
+        "detail": "{\"button\":false,\"fxOff\":false}"
+      },
+      {
+        "label": "\"Every letter stands for something\" lists a word for each letter of ECHELON",
+        "pass": true,
+        "detail": "Embrace, Cultural, Harmony, Equality, Languages, Openness, Nuances"
+      },
+      {
+        "label": "desktop page weight at load under 3 MB",
+        "pass": true,
+        "detail": "2376 KB in 21 files"
+      },
+      {
+        "label": "text over the hero art meets WCAG AA (1440 px)",
+        "pass": true,
+        "detail": "21 text blocks, lowest 5.24:1 (a.scroll-hint \"Scroll to explore\")"
+      },
+      {
+        "label": "text over the hero art meets WCAG AA (1024 px)",
+        "pass": true,
+        "detail": "18 text blocks, lowest 5.32:1 (p.lcd__label \"Time until Echelon starts\")"
+      },
+      {
+        "label": "axe: no violations (1440 px)",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  {
+    "name": "5. Countdown",
+    "checks": [
+      {
+        "label": "counts down to a set date",
+        "pass": true,
+        "detail": "03:04:59:59"
+      },
+      {
+        "label": "ticks every second",
+        "pass": true,
+        "detail": "03:04:59:59 -> 03:04:59:58"
+      },
+      {
+        "label": "shows the \"happening now\" message once the date has passed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "counts down to the date in content.json",
+        "pass": true,
+        "detail": "22:13:39:11 · Echelon starts on Saturday, 21 November 2026 at 8:15 am."
+      }
+    ]
+  },
+  {
+    "name": "6. Settings switches (content.json \"settings\")",
+    "checks": [
+      {
+        "label": "\"intro\": false → no intro on a first visit",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "\"effects\": false → everything off",
+        "pass": true,
+        "detail": "{\"off\":true,\"gsap\":false,\"cursor\":false}"
+      },
+      {
+        "label": "an old saved \"effects off\" choice is ignored and cleared",
+        "pass": true,
+        "detail": "{\"off\":false,\"stored\":null}"
+      },
+      {
+        "label": "\"scrollAnimations\": false → no scroll moments, other effects stay",
+        "pass": true,
+        "detail": "{\"gsap\":false,\"pinned\":false,\"cursor\":true}"
+      },
+      {
+        "label": "\"customCursor\": false → normal cursor",
+        "pass": true,
+        "detail": "{\"cursor\":false,\"hidden\":false}"
+      }
+    ]
+  },
+  {
+    "name": "7. Console",
+    "checks": [
+      {
+        "label": "no JavaScript errors in any run",
+        "pass": false,
+        "detail": "reduced-375: Failed to load resource: the server responded with a status of 404 (Not Found) | reduced-375: Failed to load resource: the server responded with a status of 404 (Not Found) | reduced-1440: Failed to load resource: the server responded with a status of 404 (Not Found) | reduced-1440: Failed to load resource: the server responded with a status of 404 (Not Found) | mobile: Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ]
+  }
+]

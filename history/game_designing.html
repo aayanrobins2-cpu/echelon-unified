@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Slick CSS if you're using Slick for the gallery -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Game Designing - Echelon</title>
+</head>
+<body>
+
+    <header>
+        <h1>Game Designing</h1>
+        <nav>
+            <a href="Homepage2023.html">Back to Main</a>
+        </nav>
+    </header>
+
+    <section class="event-hero">
+        <!-- Add your banner image path here -->
+        <img src="Images23\GameDesigning\game_designing_banner.png" alt="Game Designing Banner">
+    </section>
+
+    <section id="about-event">
+        <h2>About Game Designing</h2>
+        <p>Create a game with the theme of embracing diversity using game development tools such as GreenFoot, Stencyl, Torque 3D, Gamebryo, Build Box, Pfile, etc.</p>
+    </section>
+
+    <section id="event-rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Number of teams per school: Maximum 2</li>
+            <li>Number of participants per team: 2</li>
+            <li>Duration: 8:00 am to 12:00 pm</li>
+            <li>Resources: Participants should bring a laptop with the necessary software installed.</li>
+            <li>Laptops should not have any pre-built game or parts of the game.</li>
+            <li>Prior Knowledge: Participants should have prior knowledge of game development tools such as GreenFoot, Stencyl, Torque 3D, Gamebryo, Build Box, Pfile, etc.</li>
+            <li>Grade Level: 9-12</li>
+        </ul>
+    </section>
+
+    <section id="event-gallery">
+        <h2>Event Images</h2>
+        
+        <!-- Slick Slideshow for Gallery Images -->
+        <div class="slick-slider">
+            <!-- Add your gallery images here -->
+            <img src="Images23/GameDesigning/game_designing_1.jpg" alt="Game Designing Image 1">
+            <img src="Images23/GameDesigning/game_designing_2.jpg" alt="Game Designing Image 2">
+            <img src="Images23/GameDesigning/game_designing_3.jpg" alt="Game Designing Image 3">
+            <img src="Images23/GameDesigning/game_designing_4.jpg" alt="Game Designing Image 4">
+            <img src="Images23/GameDesigning/game_designing_5.jpg" alt="Game Designing Image 5">
+            <img src="Images23/GameDesigning/game_designing_6.jpg" alt="Game Designing Image 6">
+            <!-- ... continue to add more images ... -->
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Echelon Event. Return to <a href="Homepage2023.html"> Main Page</a>.</p>
+    </footer>
+
+    <!-- Add jQuery and Slick's JS if using Slick for the gallery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick if using Slick for the gallery -->
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                dots: true, // Enable dots pagination
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                // You can add more settings here based on your preferences
+            });
+        });
+    </script>
+
+</body>
+</html>

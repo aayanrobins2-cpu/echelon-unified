@@ -1,0 +1,86 @@
+{
+  "total": 2432611,
+  "files": 21,
+  "list": [
+    {
+      "name": "js/main.js?v=f5ec8a7c00",
+      "bytes": 28965
+    },
+    {
+      "name": "assets/intro/earth-0-1920.avif",
+      "bytes": 101521
+    },
+    {
+      "name": "assets/intro/earth-1-1920.avif",
+      "bytes": 107537
+    },
+    {
+      "name": "",
+      "bytes": 0
+    },
+    {
+      "name": "assets/fonts/fontshare/cabinet-grotesk-500.woff2",
+      "bytes": 300
+    },
+    {
+      "name": "assets/fonts/fontshare/satoshi-variable.woff2",
+      "bytes": 300
+    },
+    {
+      "name": "assets/fonts/dseg/DSEG7Classic-Bold.woff2",
+      "bytes": 5432
+    },
+    {
+      "name": "assets/photos/board-960.webp",
+      "bytes": 17304
+    },
+    {
+      "name": "js/vendor/gsap.min.js?v=3.15.0",
+      "bytes": 28720
+    },
+    {
+      "name": "assets/favicon.svg",
+      "bytes": 889
+    },
+    {
+      "name": "js/vendor/ScrollTrigger.min.js?v=3.15.0",
+      "bytes": 18303
+    },
+    {
+      "name": "assets/intro/earth-2-1920.avif",
+      "bytes": 76517
+    },
+    {
+      "name": "assets/intro/earth-3-1920.avif",
+      "bytes": 198882
+    },
+    {
+      "name": "assets/intro/earth-4-1920.avif",
+      "bytes": 307862
+    },
+    {
+      "name": "assets/intro/earth-5-1920.avif",
+      "bytes": 393131
+    },
+    {
+      "name": "assets/intro/earth-6-1920.avif",
+      "bytes": 459807
+    },
+    {
+      "name": "assets/intro/earth-7-1350.avif",
+      "bytes": 201529
+    },
+    {
+      "name": "assets/intro/campus-top-1920.avif",
+      "bytes": 258879
+    },
+    {
+      "name": "assets/intro/campus-wide-1920.avif",
+      "bytes": 204292
+    },
+    {
+      "name": "assets/favicon.svg",
+      "bytes": 889
+    }
+  ]
+}

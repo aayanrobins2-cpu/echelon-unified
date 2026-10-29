@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echelon 3.0 - Bangalore International School</title>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles & Animation Configuration -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* GLITCH ANIMATION FOR MODAL TITLE */
+        @keyframes glitch-anim {
+            0% { 
+                clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+                transform: translate(0);
+            }
+            20% { 
+                clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+                transform: translate(-2px, 2px);
+                color: #22d3ee; /* cyan-400 */
+            }
+            40% { 
+                clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+                transform: translate(-2px, -2px);
+            }
+            60% { 
+                clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+                transform: translate(2px, 2px);
+                color: #ef4444; /* red-500 */
+            }
+            80% { 
+                clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+                transform: translate(2px, -2px);
+            }
+            100% { 
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                transform: translate(0);
+                color: white;
+            }
+        }
+
+        /* Circuit Pulse Animation */
+        @keyframes circuit-pulse {
+            0%, 100% { opacity: 0.3; stroke: #475569; }
+            50% { opacity: 1; stroke: #22d3ee; }
+        }
+        .circuit-line { animation: circuit-pulse 3s infinite; }
+        .circuit-line:nth-child(2) { animation-delay: 0.5s; }
+        .circuit-line:nth-child(3) { animation-delay: 1s; }
+        
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        .animate-glitch { animation: glitch-anim 0.4s cubic-bezier(.25, .46, .45, .94) both; }
+        
+        /* Grid Background Pattern */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
+                              linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center top, black 20%, transparent 90%);
+            -webkit-mask-image: radial-gradient(circle at center top, black 20%, transparent 90%);
+        }
+
+        /* Floating Particles Animation */
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-15px) scale(1.1); opacity: 0.7; }
+        }
+        .particle { animation: float-particle 4s ease-in-out infinite; }
+        .particle-delay-1 { animation-delay: 1s; }
+        .particle-delay-2 { animation-delay: 2s; }
+        .particle-delay-3 { animation-delay: 3s; }
+
+        /* Pulse Ring for Plug */
+        @keyframes plug-pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .plug-ring { animation: plug-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+        /* Holographic Panel Styles */
+        .holo-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+        }
+        .holo-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.5), transparent);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* Modal Transitions */
+        #event-modal { transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s; }
+        #event-modal.hidden { opacity: 0; pointer-events: none; display: none; }
+        #event-modal:not(.hidden) { opacity: 1; pointer-events: auto; display: flex; }
+
+        /* --- INTRO SEQUENCE STYLES --- */
+        #intro-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'JetBrains Mono', monospace;
+            overflow: hidden;
+            /* Ensure smooth fade out */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-in;
+        }
+
+        /* Matrix Canvas */
+        #matrix-canvas {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease-in;
+        }
+
+        /* Matrix Glitch Effect for Intro Text */
+        .matrix-glitch {
+            position: relative;
+            color: #0f0; /* Matrix Green */
+            animation: matrix-shake 0.2s infinite;
+        }
+        .matrix-glitch::before, .matrix-glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            opacity: 0.8;
+        }
+        .matrix-glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #fff; /* White flash */
+            clip: rect(44px, 450px, 56px, 0);
+            animation: matrix-glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .matrix-glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #003300; /* Dark Green shadow */
+            clip: rect(44px, 450px, 56px, 0);
+            animation: matrix-glitch-anim2 2s infinite linear alternate-reverse;
+        }
+
+        /* Scanline Overlay for Intro */
+        .scanlines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 101;
+            opacity: 0.3;
+        }
+
+        @keyframes matrix-shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        @keyframes matrix-glitch-anim {
+            0% { clip: rect(10px, 9999px, 30px, 0); }
+            20% { clip: rect(50px, 9999px, 60px, 0); }
+            40% { clip: rect(20px, 9999px, 80px, 0); }
+            60% { clip: rect(90px, 9999px, 10px, 0); }
+            80% { clip: rect(40px, 9999px, 70px, 0); }
+            100% { clip: rect(60px, 9999px, 30px, 0); }
+        }
+        @keyframes matrix-glitch-anim2 {
+            0% { clip: rect(30px, 9999px, 10px, 0); }
+            20% { clip: rect(60px, 9999px, 90px, 0); }
+            40% { clip: rect(10px, 9999px, 50px, 0); }
+            60% { clip: rect(70px, 9999px, 20px, 0); }
+            80% { clip: rect(20px, 9999px, 60px, 0); }
+            100% { clip: rect(50px, 9999px, 40px, 0); }
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            950: '#020617', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-cyan-500/30 min-h-screen flex flex-col overflow-hidden">
+
+    <!-- INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <!-- Matrix Rain Canvas -->
+        <canvas id="matrix-canvas"></canvas>
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+        
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="text-green-500 text-xs md:text-sm font-bold mb-6 min-h-[20px]" id="console-output"></div>
+            
+            <div id="intro-title-container" class="text-center px-4 hidden">
+                <div id="intro-text-1" class="text-white text-2xl md:text-4xl font-black uppercase tracking-widest mb-2 border-r-4 border-transparent pr-2"></div>
+                <div id="intro-text-2" class="text-slate-400 text-lg md:text-xl uppercase tracking-[0.3em]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTENT (Visible immediately under overlay) -->
+    <div id="app-container">
+        <!-- NAVIGATION -->
+        <nav class="fixed top-0 w-full z-40 bg-slate-950/70 backdrop-blur-md border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between h-auto md:h-20 items-center py-4 md:py-0 gap-4">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                            <i data-lucide="cpu" class="text-white w-6 h-6"></i>
+                        </div>
+                        <div class="flex flex-col leading-none">
+                            <span class="font-bold text-xl tracking-tight text-white">ECHELON</span>
+                            <span class="text-[10px] text-cyan-400 tracking-widest uppercase mt-1">Tech Fest 3.0</span>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Badge -->
+                    <div class="flex items-center gap-3 bg-slate-900/50 px-4 py-2 rounded-full border border-slate-800">
+                        <span class="text-xs text-slate-400 uppercase tracking-wide font-semibold">In Collaboration with</span>
+                        <div class="h-4 w-[1px] bg-slate-700"></div>
+                        <span class="text-sm font-bold text-white tracking-tight">VIDYASHILP UNIVERSITY</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-grow" id="main-content">
+            <!-- Content injected by JS -->
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-900 border-t border-slate-800 py-12 mt-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center">
+                        <i data-lucide="cpu" class="text-slate-400 w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-slate-200">ECHELON <span class="text-slate-600">3.0</span></span>
+                </div>
+                <!-- ADDED NAME TO FOOTER -->
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    © 2026 Bangalore International School. All rights reserved.<br>
+                    <span class="opacity-75">Designed & Developed by Samit Bansal</span>
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-cyan-400 transition-colors text-sm">Contact</a>
+                    <a href="#" class="text-slate-500 hover:text-cyan-400 transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-slate-500 hover:text-cyan-400 transition-colors text-sm">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODAL OVERLAY (Hidden by default) -->
+    <div id="event-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+        <!-- Dynamic Background Glow -->
+        <div id="modal-glow" class="absolute inset-0 opacity-30 pointer-events-none transition-colors duration-500"></div>
+
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fade-in z-10">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors z-30 border border-white/10 text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div id="modal-content" class="relative overflow-hidden">
+                <!-- Modal content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- DATA ---
+        const eventsData = [
+            {
+                id: 1,
+                title: "Escape Room",
+                iconName: "terminal",
+                colorClass: "text-cyan-400",
+                themeGradient: "from-cyan-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000",
+                description: "Write the program code to get the clue to escape the glass room.",
+                story: "The glass walls are closing in. Your only escape tool is your logic. Write the correct program to generate the key. The code is your weapon, and the syntax is your path to survival.",
+                rules: [
+                    "Write the program code to get the clue (Java or Python).",
+                    "Find the key with the clue given in the code.",
+                    "Use this key to escape from the room."
+                ],
+                details: {
+                    teamPerSchool: "2",
+                    studentsPerTeam: "2-4",
+                    duration: "25 Minutes",
+                    resources: "Host School PCs",
+                    knowledge: "Java or Python",
+                    grade: "9-12"
+                }
+            },
+            {
+                id: 2,
+                title: "Game Design",
+                iconName: "gamepad-2",
+                colorClass: "text-purple-400",
+                themeGradient: "from-purple-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
+                description: "Create a game promoting sustainability.",
+                story: "The world is on the brink. Code a reality where sustainability isn't just a goal—it's the only way to win. Build the future, one pixel at a time, using your weapon of choice: GreenFoot or P5.",
+                rules: [
+                    "Laptop should not have any part of the game code beforehand.",
+                    "Create a game promoting sustainability."
+                ],
+                details: {
+                    teamPerSchool: "2",
+                    studentsPerTeam: "2",
+                    duration: "2 Hours 30 Minutes",
+                    resources: "Bring your own laptop",
+                    knowledge: "GreenFoot, P5, or similar",
+                    grade: "8-12"
+                }
+            },
+            {
+                id: 3,
+                title: "Treasure Hunt",
+                iconName: "map",
+                colorClass: "text-yellow-400",
+                themeGradient: "from-yellow-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=1000",
+                description: "Data analysis and logic puzzles using Excel.",
+                story: "Forge your map, mark your treasure. Plot the chart, reach the midpoint, and solve the binary puzzle to reveal the ultimate clue. The path is hidden in the numbers.",
+                rules: [
+                    "Plot the chart, get the path.",
+                    "Reach the midpoint, solve the puzzle to get the clue.",
+                    "Forge your map, mark your treasure."
+                ],
+                details: {
+                    teamPerSchool: "2",
+                    studentsPerTeam: "3",
+                    duration: "1 Hour",
+                    resources: "MS Excel",
+                    knowledge: "Binary Arithmetic, Conversions",
+                    grade: "9-12"
+                }
+            },
+            {
+                id: 4,
+                title: "Shark Tank",
+                iconName: "users",
+                colorClass: "text-green-400",
+                themeGradient: "from-green-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000",
+                description: "Pitch a business idea on the theme 'Sawubona'.",
+                story: "'Sawubona' - I see you. The boardroom is silent. You have minutes to convince the investors that your idea—an App, Project, or Business Plan—truly 'sees' the world and its needs.",
+                rules: [
+                    "Theme: 'Sawubona' (I See You).",
+                    "Ideas can be an App, Project Plan, or Business Plan.",
+                    "Submit presentation by 15th January."
+                ],
+                details: {
+                    teamPerSchool: "2",
+                    studentsPerTeam: "2-3",
+                    duration: "5-10 Minutes / Team",
+                    resources: "Presentation materials",
+                    knowledge: "Public Speaking, Business",
+                    grade: "9-12"
+                }
+            },
+            {
+                id: 5,
+                title: "E-Waste Reimagined",
+                iconName: "leaf",
+                colorClass: "text-emerald-400",
+                themeGradient: "from-emerald-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=1000",
+                description: "Create a reusable product using e-waste.",
+                story: "Resurrect the obsolete. Turn forgotten circuits, dead wires, and broken motherboards into a masterpiece of modern engineering. It's not just recycling; it's reincarnation.",
+                rules: [
+                    "Create a reusable product using e-waste.",
+                    "Product is to be created at our campus.",
+                    "Electrical sockets will be provided."
+                ],
+                details: {
+                    teamPerSchool: "1-4",
+                    studentsPerTeam: "2-4",
+                    duration: "2 Hours + 5 Min Pres",
+                    resources: "E-waste materials",
+                    knowledge: "Creativity, Engineering",
+                    grade: "8-12"
+                }
+            },
+            {
+                id: 6,
+                title: "Drone Race",
+                iconName: "plane",
+                colorClass: "text-red-400",
+                themeGradient: "from-red-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&q=80&w=1000",
+                description: "Navigate a drone through obstacles.",
+                story: "Gravity is just a suggestion. Push your reflexes to the limit in a high-speed aerial gauntlet where milliseconds define the champion. Eye on the sky, hands on the controller.",
+                rules: [
+                    "Each team brings a drone and flies it through obstacles.",
+                    "Each drone is timed individually.",
+                    "Drone dimensions max: 25cm x 25cm x 5cm."
+                ],
+                details: {
+                    teamPerSchool: "1-2",
+                    studentsPerTeam: "2-3",
+                    duration: "Timed Run",
+                    resources: "Own Drone",
+                    knowledge: "Drone Piloting",
+                    grade: "8-12"
+                }
+            },
+            {
+                id: 7,
+                title: "Web Designing",
+                iconName: "layout",
+                colorClass: "text-pink-400",
+                themeGradient: "from-pink-900/50 to-slate-900",
+                bgImage: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=1000",
+                description: "Code a website using HTML & JS around 'Sawubona'.",
+                story: "'Sawubona' - I see you. Weave code, color, and creativity to interpret this ancient philosophy for the modern digital age. Can you build a site that truly sees its user?",
+                rules: [
+                    "Theme: Sawubona",
+                    "Code a website using HTML and Javascript."
+                ],
+                details: {
+                    teamPerSchool: "1-2",
+                    studentsPerTeam: "2-3",
+                    duration: "2 Hours",
+                    resources: "Computer with HTML/JS",
+                    knowledge: "HTML & Javascript",
+                    grade: "8-12"
+                }
+            }
+        ];
+
+        let typewriterInterval; // To clear interval if modal is closed early
+
+        // --- GLOBAL FUNCTIONS TO FIX CLICK HANDLER ERRORS ---
+        window.openModal = function(id) {
+            const event = eventsData.find(e => e.id === id);
+            if (!event) return;
+
+            const modal = document.getElementById('event-modal');
+            const content = document.getElementById('modal-content');
+            const glow = document.getElementById('modal-glow');
+
+            // Apply dynamic theme color to the background glow
+            glow.className = `absolute inset-0 opacity-30 pointer-events-none transition-colors duration-500 bg-gradient-to-br ${event.themeGradient}`;
+
+            content.innerHTML = `
+                <!-- Modal Header with Atmospheric Background -->
+                <div class="relative p-8 border-b border-slate-700 z-10 overflow-hidden min-h-[200px] flex flex-col justify-end">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 z-0">
+                         <img src="${event.bgImage}" class="w-full h-full object-cover" />
+                         <!-- Heavy gradient overlay to make text pop -->
+                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent"></div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 bg-slate-900/80 backdrop-blur-md rounded-xl border border-slate-700 shadow-xl">
+                                <i data-lucide="${event.iconName}" class="w-8 h-8 ${event.colorClass}"></i>
+                            </div>
+                            <!-- GLITCH ANIMATION APPLIED HERE -->
+                            <h2 class="text-3xl font-bold text-white tracking-tight animate-glitch">${event.title}</h2>
+                        </div>
+                        
+                        <!-- Typewriter Story Section -->
+                        <div class="font-mono text-base md:text-lg text-slate-200 leading-relaxed min-h-[80px] bg-black/40 p-4 rounded-lg border-l-2 border-cyan-500 backdrop-blur-sm">
+                            <span class="text-cyan-400 mr-2">>_</span><span id="story-text"></span><span class="inline-block w-2 h-5 bg-cyan-400 ml-1 cursor-blink align-middle"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 z-10 relative bg-slate-900">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-slate-800/40 p-6 rounded-xl border border-slate-700/50 hover:border-slate-600 transition-colors backdrop-blur-sm">
+                            <h3 class="text-cyan-400 font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="trophy" class="w-4 h-4"></i> Rules
+                            </h3>
+                            <ul class="space-y-2">
+                                ${event.rules.map(rule => `
+                                    <li class="text-slate-300 text-sm flex items-start gap-2">
+                                        <span class="mt-1.5 w-1.5 h-1.5 bg-cyan-500 rounded-full flex-shrink-0"></span>
+                                        ${rule}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-800/40 p-6 rounded-xl border border-slate-700/50 hover:border-slate-600 transition-colors backdrop-blur-sm">
+                            <h3 class="text-purple-400 font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="cpu" class="w-4 h-4"></i> Details
+                            </h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                                    <span class="text-slate-400">Team Size</span>
+                                    <span class="text-white">${event.details.studentsPerTeam} Students</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                                    <span class="text-slate-400">Duration</span>
+                                    <span class="text-white">${event.details.duration}</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                                    <span class="text-slate-400">Resources</span>
+                                    <span class="text-white text-right max-w-[50%]">${event.details.resources}</span>
+                                </div>
+                                <div class="flex justify-between pt-1">
+                                    <span class="text-slate-400">Prerequisites</span>
+                                    <span class="text-white text-right max-w-[50%]">${event.details.knowledge}</span>
+                                </div>
+                                 <div class="flex justify-between pt-1 border-t border-slate-700/50 mt-2">
+                                    <span class="text-slate-400 mt-2">Grade</span>
+                                    <span class="text-white text-right mt-2">${event.details.grade}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+            lucide.createIcons();
+            
+            // Start the typewriter effect
+            typeWriter(event.story, 'story-text', 20);
+        };
+
+        window.closeModal = function() {
+            const modal = document.getElementById('event-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+            clearInterval(typewriterInterval); 
+        };
+
+        document.getElementById('event-modal').addEventListener('click', function(e) {
+            if (e.target === this) window.closeModal();
+        });
+
+        // --- TYPEWRITER EFFECT FUNCTION ---
+        function typeWriter(text, elementId, speed = 20) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            element.innerHTML = ""; 
+            let i = 0;
+            
+            clearInterval(typewriterInterval); 
+
+            typewriterInterval = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typewriterInterval);
+                }
+            }, speed);
+        }
+
+        // --- COUNTDOWN LOGIC (MOVED TO TOP TO FIX REFERENCE ERROR) ---
+        function startCountdown() {
+            // Target Date: Jan 17, 2026 08:30:00
+            const targetDate = new Date("Jan 17, 2026 08:30:00").getTime();
+
+            const timerInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("days").innerText = "00";
+                    document.getElementById("hours").innerText = "00";
+                    document.getElementById("minutes").innerText = "00";
+                    document.getElementById("seconds").innerText = "00";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const daysEl = document.getElementById("days");
+                const hoursEl = document.getElementById("hours");
+                const minsEl = document.getElementById("minutes");
+                const secsEl = document.getElementById("seconds");
+
+                if (daysEl) daysEl.innerText = days < 10 ? "0" + days : days;
+                if (hoursEl) hoursEl.innerText = hours < 10 ? "0" + hours : hours;
+                if (minsEl) minsEl.innerText = minutes < 10 ? "0" + minutes : minutes;
+                if (secsEl) secsEl.innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            }, 1000);
+        }
+
+        // --- RENDER FUNCTION ---
+        function renderContent() {
+            const main = document.getElementById('main-content');
+            
+            // Generate Cards HTML with specific Backgrounds
+            const cardsHTML = eventsData.map(event => `
+                <div onclick="window.openModal(${event.id})" class="group relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-900/20">
+                    
+                    <!-- Atmospheric Background Image with heavy overlay -->
+                    <div class="absolute inset-0 z-0">
+                        <img src="${event.bgImage}" class="w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="${event.title} background" />
+                        <!-- Gradient Overlay to ensure text readability -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/80 group-hover:to-slate-900/60 transition-colors duration-500"></div>
+                    </div>
+
+                    <div class="relative z-10 p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-700 backdrop-blur-sm group-hover:border-cyan-500/30 transition-colors">
+                                <i data-lucide="${event.iconName}" class="w-8 h-8 ${event.colorClass}"></i>
+                            </div>
+                            <i data-lucide="chevron-right" class="text-slate-600 group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors shadow-sm">${event.title}</h3>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">${event.description}</p>
+
+                        <div class="flex items-center gap-4 text-xs font-medium text-slate-400 pt-4 border-t border-slate-800/50">
+                            <span class="flex items-center gap-1 bg-black/30 px-2 py-1 rounded"><i data-lucide="users" class="w-3 h-3"></i> ${event.details.studentsPerTeam}</span>
+                            <span class="flex items-center gap-1 bg-black/30 px-2 py-1 rounded"><i data-lucide="clock" class="w-3 h-3"></i> ${event.details.duration}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            main.innerHTML = `
+                <!-- NEURAL COMMAND CENTER HERO SECTION -->
+                <!-- Reduced padding-bottom (pb-4) to bring sections closer -->
+                <section class="relative overflow-hidden pb-4 pt-32 lg:pt-32 lg:pb-8 animate-fade-in min-h-[90vh] flex items-center justify-center">
+                    
+                    <!-- Background Grid -->
+                    <div class="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+
+                    <!-- Ambient Glows -->
+                    <div class="absolute top-20 left-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                        
+                        <!-- 3-COLUMN GRID -->
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative">
+                            
+                            <!-- LEFT NODE: MISSION DATA -->
+                            <div class="lg:col-span-3 order-3 lg:order-1 flex flex-col justify-center">
+                                <div class="holo-panel rounded-xl p-6 relative group transform transition-transform hover:scale-105 min-h-[280px] flex flex-col justify-between">
+                                    <div class="absolute -left-1 top-6 w-1 h-12 bg-cyan-500 rounded-r-lg shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
+                                    <h3 class="text-cyan-400 font-mono text-sm tracking-widest mb-4 border-b border-cyan-500/20 pb-2">MISSION INTEL</h3>
+                                    
+                                    <div class="space-y-6 flex-grow">
+                                        <div>
+                                            <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Date</div>
+                                            <div class="text-white font-bold text-lg flex items-center gap-2">
+                                                <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i> JAN 17, 2026
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Time</div>
+                                            <div class="text-white font-bold text-lg flex items-center gap-2">
+                                                <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i> 08:30 - 13:30
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Sector</div>
+                                            <div class="text-white font-bold text-lg flex items-center gap-2">
+                                                <i data-lucide="map-pin" class="w-4 h-4 text-red-400"></i> BLR INT. SCHOOL
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-6 pt-4 border-t border-slate-700/50 flex flex-col gap-2">
+                                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7LMz0Y93HIq_RlApplcVd0RNzuW1nWMFLuduaxYFTXQJldw/viewform?usp=header" target="_blank" class="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-mono font-bold rounded border border-cyan-500 flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan-900/50 animate-pulse">
+                                            <i data-lucide="file-check" class="w-4 h-4"></i> INITIATE REGISTRATION
+                                        </a>
+                                         <a href="brochure.pdf" download class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-mono font-bold rounded border border-slate-700 flex items-center justify-center gap-2 transition-all">
+                                            <i data-lucide="download" class="w-3 h-3"></i> DOWNLOAD DATA
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CENTER HUB: PLUG & TITLE -->
+                            <div class="lg:col-span-6 order-1 lg:order-2 relative flex flex-col items-center justify-center text-center">
+                                
+                                <!-- AUTHORITY TEXT ADDED HERE - UPDATED -->
+                                <div class="mb-4 text-center">
+                                    <span class="text-white text-xs md:text-sm font-black tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+                                        BANGALORE INTERNATIONAL SCHOOL
+                                    </span>
+                                    <div class="text-slate-500 text-[10px] uppercase tracking-[0.4em] mt-1">PRESENTS</div>
+                                </div>
+
+                                <!-- ECHELON SVG TITLE (SCALED UP) -->
+                                <div class="relative w-[400px] h-[160px] md:w-[500px] md:h-[200px] mb-[-40px] z-20 pointer-events-none select-none">
+                                    <svg width="100%" height="100%" viewBox="0 0 340 140" overflow="visible">
+                                        <defs>
+                                            <path id="textCurve" d="M 20 120 Q 170 10 320 120" fill="transparent" />
+                                            <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" style="stop-color:white;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#94a3b8;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <text width="340">
+                                            <textPath href="#textCurve" startOffset="50%" text-anchor="middle" style="font-size: 3.8rem; font-weight: 900; font-family: 'Inter', sans-serif; letter-spacing: 0.1em; fill: url(#textGradient); filter: drop-shadow(0px 0px 20px rgba(34, 211, 238, 0.5));">
+                                                ECHELON
+                                            </textPath>
+                                        </text>
+                                    </svg>
+                                </div>
+
+                                <!-- PLUG & TREE -->
+                                <div class="relative w-48 h-48 flex items-end justify-center mb-6">
+                                     <!-- Particles -->
+                                    <div class="absolute top-0 -left-20 text-cyan-500/20 font-mono text-2xl particle">101</div>
+                                    <div class="absolute top-10 -right-20 text-purple-500/20 font-mono text-2xl particle particle-delay-1">010</div>
+                                    
+                                    <svg class="absolute bottom-14 w-full h-36" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M100 150 L100 50" stroke="#475569" stroke-width="4" class="circuit-line"/>
+                                        <path d="M100 120 L40 100 L40 60" stroke="#475569" stroke-width="3" class="circuit-line"/>
+                                        <path d="M100 90 L160 80 L160 40" stroke="#475569" stroke-width="3" class="circuit-line"/>
+                                        <circle cx="40" cy="60" r="5" fill="#22d3ee" class="circuit-line"/>
+                                        <circle cx="160" cy="40" r="5" fill="#a855f7" class="circuit-line"/>
+                                    </svg>
+                                    
+                                    <div class="relative z-10 bg-slate-900 border-2 border-slate-700 p-3 rounded-xl shadow-[0_0_30px_rgba(34,211,238,0.2)]">
+                                        <div class="absolute inset-0 rounded-xl border border-cyan-400/50 plug-ring"></div>
+                                        <i data-lucide="plug" class="w-14 h-14 text-yellow-400 relative z-10 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]"></i>
+                                    </div>
+                                </div>
+
+                                <!-- TAGLINE - ADDED PR-2 TO FIX CUTOFF -->
+                                <h2 class="text-2xl md:text-3xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-8 animate-glitch pr-2">
+                                    IGNITING THE NEXT GENERATION
+                                </h2>
+
+                                <!-- RESTORED ORIGINAL COUNTDOWN (LARGE) -->
+                                <div class="inline-flex flex-wrap justify-center gap-4 md:gap-8 bg-slate-900/60 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-2xl">
+                                    <div class="text-center">
+                                        <div id="days" class="text-3xl md:text-5xl font-mono font-bold text-white mb-1">00</div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-widest">Days</div>
+                                    </div>
+                                    <div class="text-3xl md:text-5xl font-mono font-bold text-slate-700 self-start mt-1">:</div>
+                                    <div class="text-center">
+                                        <div id="hours" class="text-3xl md:text-5xl font-mono font-bold text-white mb-1">00</div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-widest">Hours</div>
+                                    </div>
+                                    <div class="text-3xl md:text-5xl font-mono font-bold text-slate-700 self-start mt-1">:</div>
+                                    <div class="text-center">
+                                        <div id="minutes" class="text-3xl md:text-5xl font-mono font-bold text-white mb-1">00</div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-widest">Mins</div>
+                                    </div>
+                                    <div class="text-3xl md:text-5xl font-mono font-bold text-slate-700 self-start mt-1">:</div>
+                                    <div class="text-center">
+                                        <div id="seconds" class="text-3xl md:text-5xl font-mono font-bold text-cyan-400 mb-1">00</div>
+                                        <div class="text-xs text-slate-500 uppercase tracking-widest">Secs</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- RIGHT NODE: EVENT MATRIX (Balanced Size) -->
+                            <!-- ADDED 'hidden lg:flex' to hide on mobile but show on desktop -->
+                            <div class="hidden lg:flex lg:col-span-3 order-2 lg:order-3 flex-col justify-center">
+                                <div class="holo-panel rounded-xl p-6 relative group transform transition-transform hover:scale-105 min-h-[280px] flex flex-col justify-between">
+                                    <div class="absolute -right-1 top-6 w-1 h-12 bg-purple-500 rounded-l-lg shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                                    
+                                    <!-- CENTERED TEXT -->
+                                    <h3 class="text-purple-400 font-mono text-sm tracking-widest mb-4 border-b border-purple-500/20 pb-2 text-center">ACTIVE PROTOCOLS</h3>
+                                    
+                                    <div class="space-y-4 font-mono text-sm flex-grow">
+                                        <div class="flex justify-between items-center group/item cursor-pointer p-2 hover:bg-white/5 rounded transition-colors">
+                                            <span class="text-slate-300 group-hover/item:text-white transition-colors">01 DRONE RACE</span>
+                                            <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                                        </div>
+                                        <div class="flex justify-between items-center group/item cursor-pointer p-2 hover:bg-white/5 rounded transition-colors">
+                                            <span class="text-slate-300 group-hover/item:text-white transition-colors">02 SHARK TANK</span>
+                                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <div class="flex justify-between items-center group/item cursor-pointer p-2 hover:bg-white/5 rounded transition-colors">
+                                            <span class="text-slate-300 group-hover/item:text-white transition-colors">03 ESCAPE ROOM</span>
+                                            <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
+                                        </div>
+                                        <div class="flex justify-between items-center group/item cursor-pointer p-2 hover:bg-white/5 rounded transition-colors">
+                                            <span class="text-slate-300 group-hover/item:text-white transition-colors">04 WEB DESIGN</span>
+                                            <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CENTERED TEXT -->
+                                    <div class="mt-6 text-center border-t border-slate-700/50 pt-4">
+                                        <span class="text-[10px] text-slate-500 tracking-widest uppercase">System Status: <span class="text-green-400 animate-pulse">ONLINE</span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reduced padding-top (pt-8) to bring sections closer -->
+                <section class="pt-8 pb-20 bg-slate-950 relative">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                            <div>
+                                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Featured Events</h2>
+                                <p class="text-slate-400">Competing for glory across 7 distinctive categories</p>
+                            </div>
+                            <div class="h-1 bg-slate-800 w-full md:w-auto flex-1 md:ml-8 self-center rounded-full opacity-50"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${cardsHTML}
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            lucide.createIcons();
+            
+            // Calculate time immediately on render to prevent 00:00:00 flash
+            const targetDate = new Date("Jan 17, 2026 08:30:00").getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }
+            
+            // Then start the interval
+            startCountdown();
+        }
+
+        // --- INTRO SEQUENCE LOGIC ---
+        function playIntroSequence() {
+            const overlay = document.getElementById('intro-overlay');
+            const consoleOutput = document.getElementById('console-output');
+            const titleContainer = document.getElementById('intro-title-container');
+            const text1 = document.getElementById('intro-text-1');
+            const text2 = document.getElementById('intro-text-2');
+            const appContainer = document.getElementById('app-container');
+            const matrixCanvas = document.getElementById('matrix-canvas');
+
+            // --- MATRIX RAIN SETUP ---
+            const ctx = matrixCanvas.getContext('2d');
+            matrixCanvas.width = window.innerWidth;
+            matrixCanvas.height = window.innerHeight;
+
+            const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const nums = '0123456789';
+            const alphabet = katakana + latin + nums;
+
+            const fontSize = 16;
+            const columns = matrixCanvas.width/fontSize;
+            const drops = [];
+
+            for(let x = 0; x < columns; x++)
+                drops[x] = 1;
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+                
+                ctx.fillStyle = '#0F0'; // Matrix Green
+                ctx.font = fontSize + 'px monospace';
+
+                for(let i = 0; i < drops.length; i++) {
+                    const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+                    if(drops[i]*fontSize > matrixCanvas.height && Math.random() > 0.975)
+                        drops[i] = 0;
+                    drops[i]++;
+                }
+            }
+            let matrixInterval;
+
+            // --- TYPEWRITER HELPER ---
+            function typeText(element, text, speed, callback) {
+                element.innerHTML = ""; // Clear existing content for the element
+                let i = 0;
+                element.style.borderRight = "2px solid #22d3ee"; // Cursor
+                
+                const interval = setInterval(() => {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                        element.style.borderRight = "none";
+                        if (callback) callback();
+                    }
+                }, speed);
+            }
+
+            // Phase 1: Console Logs with REAL Typing
+            const consoleSteps = [
+                "> SYSTEM.INIT(0x45)", 
+                "> ESTABLISHING SECURE CONNECTION...", 
+                "> ACCESS GRANTED."
+            ];
+
+            function runConsoleSequence(index) {
+                if (index >= consoleSteps.length) {
+                    // Console done, start Main Title
+                    setTimeout(() => {
+                        consoleOutput.style.display = 'none';
+                        titleContainer.classList.remove('hidden');
+                        
+                        typeText(text1, "BANGALORE INTERNATIONAL SCHOOL", 40, () => {
+                            setTimeout(() => {
+                                typeText(text2, "PRESENTS", 50, () => {
+                                    triggerMatrixGlitch();
+                                });
+                            }, 300);
+                        });
+                    }, 500);
+                    return;
+                }
+                
+                // Clear and type the new line (simulates rapid log update)
+                typeText(consoleOutput, consoleSteps[index], 30, () => {
+                    setTimeout(() => {
+                        runConsoleSequence(index + 1);
+                    }, 400); 
+                });
+            }
+
+            // Start the sequence
+            runConsoleSequence(0);
+
+            function triggerMatrixGlitch() {
+                setTimeout(() => {
+                    // Start Matrix Rain
+                    matrixCanvas.style.opacity = '0.3';
+                    matrixInterval = setInterval(drawMatrix, 30);
+
+                    // Glitch the Text
+                    text1.classList.add('matrix-glitch');
+                    text1.setAttribute('data-text', "BANGALORE INTERNATIONAL SCHOOL");
+                    text1.style.color = '#0f0'; // Turn text green
+                    
+                    text2.classList.add('matrix-glitch');
+                    text2.setAttribute('data-text', "PRESENTS");
+                    text2.style.color = '#0f0';
+
+                    // Phase 4: Smooth Fade Out (No more double flash)
+                    setTimeout(() => {
+                        // Smoothly zoom and fade only the OVERLAY
+                        overlay.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-in';
+                        overlay.style.opacity = '0';
+                        overlay.style.transform = 'scale(1.2)'; // Zoom THROUGH the overlay
+                        
+                        // Main content stays stable underneath
+                        document.body.style.overflow = 'auto';
+
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                            clearInterval(matrixInterval);
+                        }, 800); // Match transition duration
+
+                    }, 1500); // Glitch duration
+
+                }, 500);
+            }
+        }
+
+        // Initialize content directly (Renders BEHIND the overlay immediately)
+        renderContent();
+        // CALL ICONS IMMEDIATELY ON LOAD
+        lucide.createIcons();
+
+        // Start Intro on Load
+        window.addEventListener('load', () => {
+            lucide.createIcons(); // Double check icons are rendered
+            playIntroSequence();
+        });
+
+    </script>
+</body>
+</html>

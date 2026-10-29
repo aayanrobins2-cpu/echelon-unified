@@ -1,0 +1,177 @@
+/* Adding SF Pro font-face */
+@font-face {
+    font-family: 'SF Pro';
+    src: url('SFPro-Regular.woff2') format('woff2'),
+         url('SFPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    src: url('SFPro-Bold.woff2') format('woff2'),
+         url('SFPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Add this for the event links styling if needed */
+.event-link {
+    font-weight: bold; /* or any other style you'd like to apply */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007AFF;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero img {
+    width: 50%;
+    height: auto;
+}
+
+.subtitle {
+    color: #000;
+    font-size: 3em;
+    margin-top: 20px; /* Adjust this to set the desired space between the image and the text */
+    text-align: center;
+}
+
+#about {
+    max-width: 800px;  /* Adjust this value as needed to achieve the desired width */
+    margin: 0 auto;  /* Centers the content horizontally */
+    padding: 50px 0;
+    text-align: center;
+}
+
+#about p {
+    text-align: justify;  /* Makes the text spread evenly from edge to edge */
+    padding: 0 10px;  /* Adds some horizontal padding for better readability */
+}
+
+.cta-button {
+    background-color: #007AFF;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #005AD5;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #007AFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #005AD5;
+}
+
+.slick-slider img {
+    width: 50%; /* Adjust to the desired width */
+    margin: 0 auto; /* Center the image */
+    height: 50%;
+}
+
+.event-hero img {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.video {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.small-video {
+    width: 50%; /* You can adjust this value to make the video smaller */
+    height: 50%;
+}
