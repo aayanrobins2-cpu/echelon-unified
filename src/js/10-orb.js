@@ -52,15 +52,12 @@ float noise(vec3 x) {
                  mix(hash(i + vec3(0.0, 1.0, 1.0)), hash(i + vec3(1.0, 1.0, 1.0)), f.x), f.y), f.z);
 }
 float hash1(float n) { return fract(sin(n * 12.9898) * 43758.5453); }
+// Every stage uses the Echelon blue, green and white palette.
 vec3 iris(float t) {
-  t = fract(t) * 6.0;
-  vec3 c = mix(vec3(1.00, 0.76, 0.32), vec3(1.00, 0.46, 0.28), smoothstep(0.0, 1.0, t));
-  c = mix(c, vec3(1.00, 0.30, 0.56), smoothstep(1.0, 2.0, t));
-  c = mix(c, vec3(0.64, 0.36, 1.00), smoothstep(2.0, 3.0, t));
-  c = mix(c, vec3(0.26, 0.50, 1.00), smoothstep(3.0, 4.0, t));
-  c = mix(c, vec3(0.24, 0.84, 1.00), smoothstep(4.0, 5.0, t));
-  c = mix(c, vec3(1.00, 0.76, 0.32), smoothstep(5.0, 6.0, t));
-  return c;
+  float band = floor(fract(t) * 3.0);
+  if (band < 1.0) return vec3(0.24, 0.48, 1.0);
+  if (band < 2.0) return vec3(0.24, 0.86, 0.59);
+  return vec3(1.0);
 }
 mat3 rotY(float a) { float c = cos(a); float s = sin(a); return mat3(c, 0.0, -s, 0.0, 1.0, 0.0, s, 0.0, c); }
 mat3 rotX(float a) { float c = cos(a); float s = sin(a); return mat3(1.0, 0.0, 0.0, 0.0, c, s, 0.0, -s, c); }
@@ -131,7 +128,7 @@ void main() {
 
   vec3 cpos = mix(vec3(aText.x * 0.45, aText.y * 0.8, 0.0), sph, s);
   float hue = noise(cpos * 0.9 + vec3(t * 0.05)) * 1.35 + cpos.y * 0.12 + t * 0.015;
-  vColor = mix(mix(iris(hue), aEarth, s), vec3(1.0, 0.95, 0.88), vBird);
+  vColor = mix(mix(iris(hue), aEarth, s), vec3(1.0), vBird);
   float facing = smoothstep(-0.2, 0.45, p.z);
   float hidden = aBird.x == 1.0 && p.z < 0.0 && length(p.xy) < 1.0 ? 0.12 : 1.0;
   float globe = uAlpha * mix(1.0, 0.04 + 0.96 * facing, s) * (1.0 - uSpread) * (0.5 + 0.5 * b);
@@ -264,12 +261,10 @@ function earthColours(sphere, N, rnd) {
     const k = (Math.min(H - 1, Math.floor(90 - lat)) * W + Math.min(W - 1, Math.floor(lon + 180))) * 4;
     const v = 0.85 + rnd() * 0.3;
     let col;
-    if (px[k + 2] > 128 || lat < -64 || lat > 80) col = [0.9, 0.95, 1.0];
+    if (px[k + 2] > 128 || lat < -64 || lat > 80) col = [1.0, 1.0, 1.0];
     else if (px[k] > 128) {
-      if (isDry(lat, lon) && rnd() < 0.85) col = [0.86, 0.68, 0.38];
-      else if (Math.abs(lat) > 58) col = [0.42, 0.6, 0.4];
-      else col = [0.2, 0.7, 0.28];
-    } else col = [0.07, 0.3, 0.85];
+      col = [0.24, 0.86, 0.59];
+    } else col = [0.24, 0.48, 1.0];
     out.set(col.map((ch) => Math.min(1, ch * v)), i * 3);
   }
   return out;

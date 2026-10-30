@@ -3,9 +3,8 @@
 // growing out of a plug. Drawn here as SVG so it's sharp at every size and the
 // page, the favicon and the standalone files in assets/logos/ all share it.
 //
-// The modern touches: one even line weight, the site's colour gradient on the
-// letters, a faint pink and cyan offset in place of the original's heavy 3D
-// edge, and the tree as clean circuit traces with glowing green nodes.
+// One even line weight, blue-to-green letters, white circuit traces,
+// green nodes and a blue plug, matching the site palette.
 
 // Letters in a 10 x 14 box, drawn as strokes.
 const LETTERS = {
@@ -17,8 +16,8 @@ const LETTERS = {
   N: 'M1.5 13V1L8.5 13V1',
 };
 
-// The original's indigo, lifted for the black page, with its pink and cyan edges.
-export const INK = { dark: ['#9AA6FF', '#B79BFF'], light: ['#3B4478', '#4B3F8F'] };
+// Blue and green variants for dark and light backgrounds.
+export const INK = { dark: ['#8EB5FF', '#3DDC97'], light: ['#2357B8', '#16764D'] };
 
 // The word on an arch around (0, 0): each letter stands on a circle of radius `r`,
 // `h` tall, `step` degrees apart, upright to the circle like the original.
@@ -28,7 +27,7 @@ export const WORDS = ['Embrace', 'Cultural', 'Harmony', 'Equality', 'Languages',
 
 // `words`: also set each letter's word just outside it, along the arch, `size` tall
 // `wordGap` above the letters (pass a colour; the page hides them on small screens, where they'd be too small to read).
-export function arch({ r, h, step, id = 'echelon', ink = INK.dark, glow = true, offset = true, weight = 2.9, words = null, size = 7, wordGap = size * 0.9 }) {
+export function arch({ r, h, step, id = 'echelon', ink = INK.dark, glow = true, offset = false, weight = 2.9, words = null, size = 7, wordGap = size * 0.9 }) {
   const word = 'ECHELON';
   const s = h / 14;
   const w = 10 * s;
@@ -64,7 +63,7 @@ export function emblem({ id = 'emblem', trace = 'currentColor', weight = 2.2 } =
   // Branches rise from the trunk at 45 degrees, then run straight, like circuit traces.
   const nodes = [[32, 4.5], [11.5, 27], [52.5, 21], [24, 8.5], [40, 9.5], [10.5, 37.5], [53.5, 33]];
   return `<defs><radialGradient id="${id}-node" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#C9FFE4"/><stop offset=".55" stop-color="#3DDC97"/><stop offset="1" stop-color="#1F9E6A"/></radialGradient>`
-    + `<linearGradient id="${id}-plug" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC56B"/><stop offset="1" stop-color="#FF7A3D"/></linearGradient></defs>`
+    + `<linearGradient id="${id}-plug" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8EB5FF"/><stop offset="1" stop-color="#3D7BFF"/></linearGradient></defs>`
     + `<g fill="none" stroke="${trace}" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round">`
     + '<path d="M30 43V38L32 36L34 38V43M32 36V7"/>' // two lines from the plug join into the trunk
     + '<path d="M32 33L26 27H14M32 25L26 19V11M32 40H16L12.7 36.7"/>' // left branches
@@ -78,7 +77,7 @@ export function emblem({ id = 'emblem', trace = 'currentColor', weight = 2.2 } =
 
 // The full logo, as in the original artwork: the arched word over the tree.
 // Standalone SVG files (assets/logos/) use this.
-export function fullLogo({ trace = '#FFFFFF', ink = INK.dark, id = 'logo', words = '#A9B1E8' } = {}) {
+export function fullLogo({ trace = '#FFFFFF', ink = INK.dark, id = 'logo', words = '#DCE9FF' } = {}) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -150 300 230" role="img" aria-label="Echelon: Embrace, Cultural, Harmony, Equality, Languages, Openness, Nuances">`
     + arch({ r: 62, h: 40, step: 28, id: `${id}-a`, ink, words, size: 6.5, wordGap: 14 })
     + `<g transform="translate(-46 -50) scale(1.44)">${emblem({ id: `${id}-e`, trace })}</g>`

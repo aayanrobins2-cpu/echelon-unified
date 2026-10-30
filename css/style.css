@@ -58,11 +58,11 @@
   --violet: #A259FF;
   --blue: #3D7BFF;
   --cyan: #33D1FF;
-  --lcd: #FFC266;
+  --lcd: #3DDC97;
 
-  --iris: linear-gradient(100deg, var(--amber) 0%, var(--orange) 22%, var(--pink) 46%, var(--violet) 70%, var(--blue) 88%, var(--cyan) 100%);
-  --warm: linear-gradient(95deg, #FFE7C2 0%, #FFB27A 36%, #FF7E86 68%, #FF5DA2 100%);
-  --gold: linear-gradient(105deg, #EADBC0 0%, #EADBC0 34%, #D9AE5F 43%, #F3D394 48%, #FFF6DE 52%, #E6B864 57%, #EADBC0 66%, #EADBC0 100%);
+  --iris: linear-gradient(100deg, #3D7BFF 0%, #FFFFFF 50%, #3DDC97 100%);
+  --warm: linear-gradient(95deg, #FFFFFF 0%, #8EB5FF 36%, #3D7BFF 52%, #3DDC97 100%);
+  --gold: linear-gradient(105deg, #FFFFFF 0%, #8EB5FF 40%, #FFFFFF 52%, #3DDC97 65%, #FFFFFF 100%);
 
   --font-display: "Cabinet Grotesk", "Cabinet Fallback A", "Cabinet Fallback R", system-ui, sans-serif;
   --font-body: "Satoshi", "Satoshi Fallback A", "Satoshi Fallback R", system-ui, sans-serif;
@@ -158,7 +158,7 @@ p { text-wrap: pretty; }
 .skip-link:focus { transform: none; }
 #main:focus { outline: none; }
 
-/* The last words of a headline glow with the warm gradient. */
+/* Headline highlights use the blue, green and white brand gradient. */
 .grad {
   background: var(--warm);
   -webkit-background-clip: text;
@@ -485,8 +485,8 @@ mark.ph {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(40% 50% at 0% 100%, rgba(162, 89, 255, 0.16), transparent 70%),
-    radial-gradient(35% 45% at 100% 0%, rgba(255, 122, 61, 0.12), transparent 70%);
+    radial-gradient(40% 50% at 0% 100%, rgba(61, 123, 255, 0.16), transparent 70%),
+    radial-gradient(35% 45% at 100% 0%, rgba(61, 220, 151, 0.12), transparent 70%);
 }
 .hero__grid {
   position: relative;
@@ -514,11 +514,13 @@ html:not(.fx-off) .hero__presenter { animation: shimmer 6s linear infinite; }
   to { background-position: -150% 0; }
 }
 
+.hero__heading { container-type: inline-size; display: flex; align-items: center; gap: clamp(0.6rem, 1.4vw, 1.25rem); }
+.hero__heading-logo { width: 22%; max-width: 8rem; height: auto; flex: none; }
 .hero__title {
   /* inline-block so the gradient covers the whole word, even if a fallback font runs wider */
   display: inline-block;
   margin: 0;
-  font: 500 clamp(4.4rem, 1.6rem + 12.5vw, 12.5rem) / 0.86 var(--font-display);
+  font: 500 clamp(3rem, 20cqw, 8rem) / 0.86 var(--font-display);
   letter-spacing: -0.055em;
   background: linear-gradient(180deg, #FFFFFF 35%, #A6A6AE 100%);
   -webkit-background-clip: text;
@@ -597,7 +599,7 @@ html:not(.fx-off) .hero__presenter { animation: shimmer 6s linear infinite; }
   inset: 20%;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 35% 30%, #FFE19A 0%, #FF9A4D 22%, #FF4D8D 45%, #A259FF 66%, #3D7BFF 82%, #33D1FF 100%);
+    radial-gradient(circle at 35% 30%, #FFFFFF 0%, #3DDC97 45%, #3D7BFF 100%);
   -webkit-mask: radial-gradient(circle, #000 0.9px, transparent 1.4px) 0 0 / 5px 5px, radial-gradient(circle, #000 60%, transparent 71%);
   -webkit-mask-composite: source-in;
   mask: radial-gradient(circle, #000 0.9px, transparent 1.4px) 0 0 / 5px 5px intersect, radial-gradient(circle, #000 60%, transparent 71%);
@@ -1219,15 +1221,15 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   height: 0.6rem;
   margin: -0.3rem 0 0 -0.3rem;
   border-radius: 50%;
-  background: #ffb547;
-  box-shadow: 0 0 0.75rem rgba(255, 181, 71, 0.8);
+  background: #3DDC97;
+  box-shadow: 0 0 0.75rem rgba(61, 220, 151, 0.8);
   opacity: 0;
 }
 .intro__pin::after {
   content: "";
   position: absolute;
   inset: -0.2rem;
-  border: 1.5px solid #ffb547;
+  border: 1.5px solid #3DDC97;
   border-radius: 50%;
   animation: intro-pin 1.4s ease-out infinite;
 }

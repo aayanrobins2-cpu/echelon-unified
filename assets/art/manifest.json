@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29T13:04:29.071Z",
+  "generated": "2026-10-30T06:10:38.842Z",
   "og": {
     "src": "assets/art/og-image.jpg",
     "width": 1200,
@@ -8,19 +8,19 @@
   "files": [
     {
       "path": "assets/art/og-image.jpg",
-      "bytes": 63283,
+      "bytes": 64999,
       "width": 1200,
       "height": 630
     },
     {
       "path": "assets/favicon-32.png",
-      "bytes": 996,
+      "bytes": 847,
       "width": 32,
       "height": 32
     },
     {
       "path": "assets/apple-touch-icon.png",
-      "bytes": 6851,
+      "bytes": 5945,
       "width": 180,
       "height": 180
     }

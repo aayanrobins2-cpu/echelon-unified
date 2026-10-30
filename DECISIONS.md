@@ -435,3 +435,8 @@ These stayed the same:
 - **Only `index.html`, `js/` and `assets/` are published.** The sources, tools and reports stay in the repo only.
 - **`SITE_URL`:** `content.json` keeps the final address (bisechelon.in). The deploy passes the GitHub Pages address in `SITE_URL`, so the canonical link and the WhatsApp/Instagram preview image point at the copy people actually visit. With a custom domain set in the repo settings later, the deploy picks that up automatically.
 - *Rejected:* committing the built site to a `gh-pages` branch (that would put the font files in the public repo). Netlify or Vercel (they need a new account, and nothing they offer is missing here).
+
+
+## 30 October 2026: intro and identity colours
+
+At the user's request, the intro spark, galaxy and particle word now use blue, green and white. The globe uses the same colours for ocean, land and ice; desert dots no longer introduce amber. Headline highlights, the intro tagline, hero lighting, presenter and timer follow this palette. The circuit-tree logo is displayed beside the main Echelon heading, with blue/green letters, white traces, green nodes and a blue plug. The SVG/PNG favicons and Apple icon share that blue plug, with versioned icon links so browsers request the replacement. This supersedes the earlier warm/rainbow palette decisions above.

@@ -41,7 +41,7 @@ function plain(value) {
   return esc(String(value ?? '').replace(PH_RE, 'to be confirmed'));
 }
 
-// Wraps the trailing `highlight` part of `text` in the warm gradient.
+// Wraps the trailing `highlight` part of `text` in the brand gradient.
 function highlight(text, part) {
   const s = String(text ?? '');
   if (part && s.endsWith(part)) {
@@ -171,7 +171,10 @@ function hero(c) {
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="hero__presenter">${txt(e.presenter)}</p>
-          <h1 class="hero__title" id="hero-title">${esc(e.name)}</h1>
+          <div class="hero__heading">
+            <h1 class="hero__title" id="hero-title">${esc(e.name)}</h1>
+            <img class="hero__heading-logo" src="assets/logos/echelon-logo.svg?v=blue-green-1" alt="Echelon circuit-tree logo" width="300" height="230" fetchpriority="high">
+          </div>
           <p class="hero__tagline">${highlight(e.tagline, e.taglineHighlight)}</p>
           <p class="hero__summary">${txt(e.summary)}</p>
           <div class="hero__actions">
@@ -530,9 +533,9 @@ export function render(c, { art, inlineCss, jsHref, year }) {
 <meta property="og:image:width" content="${art.og.width}">
 <meta property="og:image:height" content="${art.og.height}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="assets/favicon.svg?v=blue-green-1" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=blue-green-1" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=blue-green-1">
 <style>${inlineCss}</style>
 <script>${headScript(c._introLevels)}</script>
 <script src="${jsHref}" defer></script>

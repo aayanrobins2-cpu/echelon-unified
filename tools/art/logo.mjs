@@ -38,9 +38,9 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const og = `<!doctype html><meta charset="utf-8"><style>
 html,body{margin:0;width:1200px;height:630px;background:#000;overflow:hidden}
 body{display:flex;align-items:center;gap:56px;padding:0 72px;box-sizing:border-box;font-family:Inter,sans-serif;color:#F5F5F7;
-background:radial-gradient(600px 420px at 290px 330px,rgba(122,108,255,.22),transparent 70%),radial-gradient(500px 380px at 1100px 640px,rgba(255,42,157,.12),transparent 70%),#000}
+background:radial-gradient(600px 420px at 290px 330px,rgba(61,123,255,.22),transparent 70%),radial-gradient(500px 380px at 1100px 640px,rgba(61,220,151,.12),transparent 70%),#000}
 svg{width:440px;flex:none}
-.k{font-size:18px;white-space:nowrap;letter-spacing:.12em;text-transform:uppercase;color:#9AA6FF;margin:0 0 18px}
+.k{font-size:18px;white-space:nowrap;letter-spacing:.12em;text-transform:uppercase;color:#8EB5FF;margin:0 0 18px}
 h1{font-family:'Inter Display',Inter,sans-serif;font-weight:600;font-size:76px;line-height:1;margin:0 0 22px;letter-spacing:-.02em}
 p{font-size:28px;line-height:1.4;margin:0;color:#C7C7CC}
 .d{margin-top:30px;font-size:30px;color:#fff;font-weight:500}
