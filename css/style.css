@@ -497,16 +497,18 @@ mark.ph {
 }
 .hero__copy { position: relative; z-index: 2; max-width: 42rem; }
 
-.bis-logo { display: block; object-fit: contain; flex: none; border-radius: 0.7rem; background: #F5F5F5; }
+/* Centre the supplied emblem (source bounds 80,94 to 256,258), excluding its blank margins. */
+.bis-logo { display: block; position: relative; flex: none; aspect-ratio: 1; overflow: hidden; border-radius: 50%; background: #F5F5F5; }
+.bis-logo > img, .partner__plate .bis-logo > img { position: absolute; display: block; width: 188.6364%; height: 190.2439%; max-width: none; max-height: none; left: -45.4545%; top: -57.3171%; object-fit: fill; transform: none; }
 .hero__presenter { display: flex; align-items: center; gap: 0.8rem; margin: 0 0 1.25rem; color: #B5EFFF; font: 500 clamp(0.8rem, 0.7rem + 0.3vw, 0.98rem) / 1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
-.hero__school-logo { width: 3.75rem; height: auto; }
+.hero__school-logo { width: 3.75rem; }
 .typewriter { display: inline-block; position: relative; }
 .typewriter__sizer { visibility: hidden; }
 .typewriter__text { position: absolute; inset: 0; }
 .typewriter.is-typing .typewriter__text::after { content: "▌"; color: #00E5C3; animation: typing-caret 0.7s steps(1) infinite; }
 @keyframes typing-caret { 50% { opacity: 0; } }
 .site-footer__school { display: flex; align-items: center; gap: 0.8rem; margin-top: 1rem; }
-.footer__school-logo { width: 3.5rem; height: auto; }
+.footer__school-logo { width: 3.5rem; }
 .site-footer__school .site-footer__note { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .typewriter.is-typing .typewriter__text::after { display: none; } }
 @keyframes shimmer {
@@ -1032,7 +1034,8 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
 }
 .partner__plate { overflow: hidden; display: grid; place-items: center; width: 9.5rem; height: 6.5rem; padding: 0.8rem; border-radius: var(--radius); background: #F5F5F7; }
 .partner__plate img { width: auto; height: auto; max-width: 100%; max-height: 4.9rem; object-fit: contain; } /* 4.9rem: the plate's height less its padding (a % max-height doesn't resolve inside a grid cell) */
-.partner__plate img[src$="/bis-logo.png"] { transform: scale(1.65); } /* The supplied file includes generous blank margins around the emblem. */
+.partner__plate--bis { background: transparent; }
+.partner__school-logo { width: 5rem; }
 .partner__role { margin: 0 0 0.15rem; color: var(--text-3); font-size: 0.88rem; }
 .partner__name { margin: 0; font: 500 1.35rem / 1.2 var(--font-display); letter-spacing: -0.02em; }
 .partner__name a { display: inline-flex; align-items: center; gap: 0.35em; text-decoration: none; }

@@ -104,7 +104,7 @@ function presenterTyping(text) {
   return `<span class="typewriter" data-typewriter><span class="sr-only">${esc(text)}</span><span class="typewriter__sizer" aria-hidden="true">${esc(text)}</span><span class="typewriter__text" aria-hidden="true">${esc(text)}</span></span>`;
 }
 function bisLogo(className = '') {
-  return `<img class="bis-logo ${className}" src="assets/logos/bis-logo.png" alt="Bangalore International School logo" width="332" height="312" decoding="async">`;
+  return `<span class="bis-logo ${className}"><img src="assets/logos/bis-logo.png" alt="Bangalore International School logo" width="332" height="312" decoding="async"></span>`;
 }
 
 /* ---------- intro ------------------------------------------------------------- */
@@ -400,7 +400,7 @@ function partners(c) {
         : txt(p.name);
       return `
           <li class="partner">
-            <div class="partner__plate"><img src="${esc(p.logo)}" alt="${plain(p.logoAlt)}" width="${Number(p.width)}" height="${Number(p.height)}" loading="lazy" decoding="async"></div>
+            <div class="partner__plate${p.logo === 'assets/logos/bis-logo.png' ? ' partner__plate--bis' : ''}">${p.logo === 'assets/logos/bis-logo.png' ? bisLogo('partner__school-logo') : `<img src="${esc(p.logo)}" alt="${plain(p.logoAlt)}" width="${Number(p.width)}" height="${Number(p.height)}" loading="lazy" decoding="async">`}</div>
             <div><p class="partner__role">${txt(p.role)}</p><p class="partner__name">${name}</p></div>
           </li>`;
     })
