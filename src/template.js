@@ -116,7 +116,7 @@ function intro(c) {
   <div class="intro__map" aria-hidden="true" data-levels="${esc(JSON.stringify(c._introLevels || []))}"${c._introClip ? ` data-clip="${esc(JSON.stringify(c._introClip))}"` : ''}${c._introPhotos ? ` data-photos="${esc(JSON.stringify(c._introPhotos))}"` : ''}></div>
   <div class="intro__stage" aria-hidden="true">
     <p class="intro__place" data-places="${esc(c.ui.introPlaces.join('|'))}"></p>
-    <p class="intro__caption">${bisLogo('intro__school-logo')}${presenterTyping(c.ui.introLines.join(' '))}</p>
+    <p class="intro__caption">${presenterTyping(c.ui.introLines.join(' '))}</p>
     <p class="intro__word">${esc(c.event.name)}</p>
     <p class="intro__tagline">${esc(c.event.tagline)}</p>
   </div>

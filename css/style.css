@@ -1269,7 +1269,6 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   white-space: nowrap;
 }
 .intro__caption { top: 50%; display: grid; justify-items: center; gap: 1rem; }
-.intro__school-logo { width: 7rem; height: auto; }
 .intro__caption .typewriter { max-width: 38rem; color: #DDF8FF; font: 500 clamp(1rem, 0.8rem + 1vw, 1.6rem) / 1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -0.02em; }
 .intro__word { top: 50%; font: 500 clamp(4rem, 2rem + 12vw, 12rem) / 1 var(--font-display); letter-spacing: -0.055em; }
 .intro__tagline {
