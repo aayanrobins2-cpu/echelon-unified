@@ -440,3 +440,8 @@ These stayed the same:
 ## 30 October 2026: intro and identity colours
 
 At the user's request, the intro spark, galaxy and particle word now use blue, green and white. The globe uses the same colours for ocean, land and ice; desert dots no longer introduce amber. Headline highlights, the intro tagline, hero lighting, presenter and timer follow this palette. The circuit-tree logo is displayed beside the main Echelon heading, with blue/green letters, white traces, green nodes and a blue plug. The SVG/PNG favicons and Apple icon share that blue plug, with versioned icon links so browsers request the replacement. This supersedes the earlier warm/rainbow palette decisions above.
+
+
+## 30 October 2026: BIS identity and presenter typing
+
+The user-supplied BIS PNG replaces the earlier brochure emblem in the organiser card, and appears in the intro, hero presenter and footer. It retains its original colours and background. The presenter line types once with a monospace face and green cursor; a full-size hidden copy reserves its layout and a separate static sentence is exposed to screen readers. Reduced motion and JavaScript-disabled visits show the complete sentence immediately. The intro starts typing when its caption appears; the hero starts when revealed, including after Skip intro.

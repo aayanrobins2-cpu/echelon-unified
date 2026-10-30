@@ -36,6 +36,7 @@ async function runIntro(orbReady) {
   const tagline = $('.intro__tagline', el);
   const fill = $('[data-intro-fill]', el);
   const token = { cancelled: false };
+  const showCaption = () => { show(caption); typePresenter(caption, 1000, token); };
   let finished = false;
   const journey = createJourney($('.intro__map', el));
 
@@ -62,6 +63,7 @@ async function runIntro(orbReady) {
   };
   const reveal = () => {
     app.inert = false;
+    if (!html.classList.contains('hero-entering')) typePresenter($('.hero__presenter'));
     el.classList.add('is-revealing');
     html.classList.add('hero-entering');
   };
@@ -95,12 +97,12 @@ async function runIntro(orbReady) {
     place.classList.remove('is-show');
     // The campus: the school's aerial photos (the caption comes in over the last one), or the
     // Earth Studio clip if that's there instead.
-    const campus = await journey.playCampus(token, () => show(caption));
+    const campus = await journey.playCampus(token, showCaption);
     if (token.cancelled) return;
     if (!campus) {
       await journey.playClip(token);
       if (token.cancelled) return;
-      show(caption);
+      showCaption();
     }
     await journey.fadeOut(token);
     if (token.cancelled) return;
@@ -108,8 +110,8 @@ async function runIntro(orbReady) {
   } else {
     await wait(250, token);
     if (token.cancelled) return;
-    show(caption);
-    await wait(1000, token);
+    showCaption();
+    await wait(1400, token);
   }
   if (token.cancelled) return;
   hide(caption);

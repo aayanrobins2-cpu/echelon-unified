@@ -21,6 +21,7 @@ if (html.classList.contains('intro-on')) {
   runIntro(ready).then(() => ready.then(wakeOrb));
 } else {
   runIntro(null); // just removes the intro markup
+  typePresenter($('.hero__presenter'));
   pageLoaded.then(makeOrb).then(wakeOrb);
 }
 

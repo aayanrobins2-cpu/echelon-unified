@@ -62,7 +62,7 @@ Used with permission: on 23 October 2026 Nihal (who runs this project) confirmed
 
 | File | Owner | Source |
 |---|---|---|
-| `bis-emblem.webp` | Bangalore International School | Taken from the Echelon 3.0 brochure (January 2026). The round emblem was cropped from the brochure image and the white caption dropped. The site prints the school's name as real text instead. |
+| `bis-logo.png` | Bangalore International School | Correct logo supplied by the user on 30 October 2026, used unchanged in the intro, presenter, organiser and footer. Supersedes the brochure-derived `bis-emblem.webp`. |
 | `vidyashilp-university.webp` | Vidyashilp University | The university's own logo file: https://vidyashilp.edu.in/wp-content/uploads/2020/12/Logo.png, re-saved as WebP. |
 
 If either institution sends official high-resolution or SVG logo files, replace these and keep the same file names.

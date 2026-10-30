@@ -497,18 +497,18 @@ mark.ph {
 }
 .hero__copy { position: relative; z-index: 2; max-width: 42rem; }
 
-.hero__presenter {
-  display: inline-block;
-  margin: 0 0 1.25rem;
-  font-size: 0.98rem;
-  font-weight: 500;
-  background: var(--gold);
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-html:not(.fx-off) .hero__presenter { animation: shimmer 6s linear infinite; }
+.bis-logo { display: block; object-fit: contain; flex: none; border-radius: 0.7rem; background: #F5F5F5; }
+.hero__presenter { display: flex; align-items: center; gap: 0.8rem; margin: 0 0 1.25rem; color: #B8D4FF; font: 500 clamp(0.8rem, 0.7rem + 0.3vw, 0.98rem) / 1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.hero__school-logo { width: 3.75rem; height: auto; }
+.typewriter { display: inline-block; position: relative; }
+.typewriter__sizer { visibility: hidden; }
+.typewriter__text { position: absolute; inset: 0; }
+.typewriter.is-typing .typewriter__text::after { content: "▌"; color: #3DDC97; animation: typing-caret 0.7s steps(1) infinite; }
+@keyframes typing-caret { 50% { opacity: 0; } }
+.site-footer__school { display: flex; align-items: center; gap: 0.8rem; margin-top: 1rem; }
+.footer__school-logo { width: 3.5rem; height: auto; }
+.site-footer__school .site-footer__note { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .typewriter.is-typing .typewriter__text::after { display: none; } }
 @keyframes shimmer {
   from { background-position: 100% 0; }
   to { background-position: -150% 0; }
@@ -1030,8 +1030,9 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   border: 1px solid var(--line);
   background: var(--bg-1);
 }
-.partner__plate { display: grid; place-items: center; width: 9.5rem; height: 6.5rem; padding: 0.8rem; border-radius: var(--radius); background: #F5F5F7; }
+.partner__plate { overflow: hidden; display: grid; place-items: center; width: 9.5rem; height: 6.5rem; padding: 0.8rem; border-radius: var(--radius); background: #F5F5F7; }
 .partner__plate img { width: auto; height: auto; max-width: 100%; max-height: 4.9rem; object-fit: contain; } /* 4.9rem: the plate's height less its padding (a % max-height doesn't resolve inside a grid cell) */
+.partner__plate img[src$="/bis-logo.png"] { transform: scale(1.65); } /* The supplied file includes generous blank margins around the emblem. */
 .partner__role { margin: 0 0 0.15rem; color: var(--text-3); font-size: 0.88rem; }
 .partner__name { margin: 0; font: 500 1.35rem / 1.2 var(--font-display); letter-spacing: -0.02em; }
 .partner__name a { display: inline-flex; align-items: center; gap: 0.35em; text-decoration: none; }
@@ -1267,9 +1268,9 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   filter: blur(8px);
   white-space: nowrap;
 }
-.intro__caption { top: 50%; display: grid; gap: 0.5rem; }
-.intro__caption span:first-child { font: 500 clamp(1.1rem, 0.9rem + 1vw, 1.6rem) / 1.2 var(--font-display); letter-spacing: -0.01em; }
-.intro__caption span:last-child { color: var(--text-3); font-size: 0.95rem; }
+.intro__caption { top: 50%; display: grid; justify-items: center; gap: 1rem; }
+.intro__school-logo { width: 7rem; height: auto; }
+.intro__caption .typewriter { max-width: 38rem; color: #DCE9FF; font: 500 clamp(1rem, 0.8rem + 1vw, 1.6rem) / 1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -0.02em; }
 .intro__word { top: 50%; font: 500 clamp(4rem, 2rem + 12vw, 12rem) / 1 var(--font-display); letter-spacing: -0.055em; }
 .intro__tagline {
   /* The particle word is drawn at scale min(23.5vw, 42vh) (see 10-orb.js), and

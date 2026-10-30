@@ -928,6 +928,31 @@ function createJourney(el) {
   return { play, playClip, playCampus, fadeOut, ready, dispose };
 }
 
+// ---- src/js/18-presenter.js
+/* The presenter types once, with the complete sentence reserved underneath. */
+function typePresenter(root, duration = 1450, token = {}) {
+  const el = root?.querySelector('[data-typewriter]');
+  if (!el) return;
+  const output = el.querySelector('.typewriter__text');
+  const text = el.querySelector('.typewriter__sizer').textContent;
+  if (!fxOn() || media('(prefers-reduced-motion: reduce)').matches) return;
+  el.classList.add('is-typing');
+  output.textContent = '';
+  const started = performance.now();
+  const step = (now) => {
+    if (token.cancelled || !el.isConnected || !fxOn()) {
+      output.textContent = text;
+      el.classList.remove('is-typing');
+      return;
+    }
+    const progress = Math.min(1, (now - started) / duration);
+    output.textContent = text.slice(0, Math.floor(progress * text.length));
+    if (progress < 1) requestAnimationFrame(step);
+    else el.classList.remove('is-typing');
+  };
+  requestAnimationFrame(step);
+}
+
 // ---- src/js/20-intro.js
 /* 20 · intro ---------------------------------------------------------------
  * About fourteen seconds, on every page load, never with reduced motion:
@@ -967,6 +992,7 @@ async function runIntro(orbReady) {
   const tagline = $('.intro__tagline', el);
   const fill = $('[data-intro-fill]', el);
   const token = { cancelled: false };
+  const showCaption = () => { show(caption); typePresenter(caption, 1000, token); };
   let finished = false;
   const journey = createJourney($('.intro__map', el));
 
@@ -993,6 +1019,7 @@ async function runIntro(orbReady) {
   };
   const reveal = () => {
     app.inert = false;
+    if (!html.classList.contains('hero-entering')) typePresenter($('.hero__presenter'));
     el.classList.add('is-revealing');
     html.classList.add('hero-entering');
   };
@@ -1026,12 +1053,12 @@ async function runIntro(orbReady) {
     place.classList.remove('is-show');
     // The campus: the school's aerial photos (the caption comes in over the last one), or the
     // Earth Studio clip if that's there instead.
-    const campus = await journey.playCampus(token, () => show(caption));
+    const campus = await journey.playCampus(token, showCaption);
     if (token.cancelled) return;
     if (!campus) {
       await journey.playClip(token);
       if (token.cancelled) return;
-      show(caption);
+      showCaption();
     }
     await journey.fadeOut(token);
     if (token.cancelled) return;
@@ -1039,8 +1066,8 @@ async function runIntro(orbReady) {
   } else {
     await wait(250, token);
     if (token.cancelled) return;
-    show(caption);
-    await wait(1000, token);
+    showCaption();
+    await wait(1400, token);
   }
   if (token.cancelled) return;
   hide(caption);
@@ -1980,6 +2007,7 @@ if (html.classList.contains('intro-on')) {
   runIntro(ready).then(() => ready.then(wakeOrb));
 } else {
   runIntro(null); // just removes the intro markup
+  typePresenter($('.hero__presenter'));
   pageLoaded.then(makeOrb).then(wakeOrb);
 }
 

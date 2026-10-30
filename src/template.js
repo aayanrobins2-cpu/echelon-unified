@@ -99,6 +99,14 @@ const glassFilter = `
   </filter>
 </svg>`;
 
+// Full text remains available to assistive technology and reserves the final layout.
+function presenterTyping(text) {
+  return `<span class="typewriter" data-typewriter><span class="sr-only">${esc(text)}</span><span class="typewriter__sizer" aria-hidden="true">${esc(text)}</span><span class="typewriter__text" aria-hidden="true">${esc(text)}</span></span>`;
+}
+function bisLogo(className = '') {
+  return `<img class="bis-logo ${className}" src="assets/logos/bis-logo.png" alt="Bangalore International School logo" width="332" height="312" decoding="async">`;
+}
+
 /* ---------- intro ------------------------------------------------------------- */
 
 function intro(c) {
@@ -108,7 +116,7 @@ function intro(c) {
   <div class="intro__map" aria-hidden="true" data-levels="${esc(JSON.stringify(c._introLevels || []))}"${c._introClip ? ` data-clip="${esc(JSON.stringify(c._introClip))}"` : ''}${c._introPhotos ? ` data-photos="${esc(JSON.stringify(c._introPhotos))}"` : ''}></div>
   <div class="intro__stage" aria-hidden="true">
     <p class="intro__place" data-places="${esc(c.ui.introPlaces.join('|'))}"></p>
-    <p class="intro__caption">${c.ui.introLines.map((l) => `<span>${esc(l)}</span>`).join('')}</p>
+    <p class="intro__caption">${bisLogo('intro__school-logo')}${presenterTyping(c.ui.introLines.join(' '))}</p>
     <p class="intro__word">${esc(c.event.name)}</p>
     <p class="intro__tagline">${esc(c.event.tagline)}</p>
   </div>
@@ -170,7 +178,7 @@ function hero(c) {
       <div class="hero__ambient" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="hero__presenter">${txt(e.presenter)}</p>
+          <p class="hero__presenter">${bisLogo('hero__school-logo')}${presenterTyping(e.presenter)}</p>
           <div class="hero__heading">
             <h1 class="hero__title" id="hero-title">${esc(e.name)}</h1>
             <img class="hero__heading-logo" src="assets/logos/echelon-logo.svg?v=blue-green-1" alt="Echelon circuit-tree logo" width="300" height="230" fetchpriority="high">
@@ -470,7 +478,7 @@ function footer(c, year) {
           <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#emblem"/></svg>
           <span class="brand__word">${esc(c.event.name)}</span>
         </a>
-        <p class="site-footer__note">${txt(c.footer.note)}</p>
+        <div class="site-footer__school">${bisLogo('footer__school-logo')}<p class="site-footer__note">${txt(c.footer.note)}</p></div>
       </div>
       <div class="site-footer__contact">
         <h2 class="site-footer__heading">${txt(K.heading)}</h2>

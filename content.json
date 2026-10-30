@@ -344,10 +344,10 @@
       {
         "name": "Bangalore International School",
         "role": "Host school",
-        "logo": "assets/logos/bis-emblem.webp",
+        "logo": "assets/logos/bis-logo.png",
         "logoAlt": "Bangalore International School emblem",
-        "width": 193,
-        "height": 175,
+        "width": 332,
+        "height": 312,
         "url": ""
       },
       {
