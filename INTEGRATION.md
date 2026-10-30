@@ -33,3 +33,9 @@ The installed Cron Jobs entry uses `*` in all five schedule fields and this comm
 ```
 
 The command logs to the hosting account rather than sending an email each minute. An idle check does not copy files or create a backup. To pause automatic publication, disable this specific entry in cPanel Cron Jobs; GitHub builds can remain enabled.
+
+## History photo montages
+
+The History index links editions 1.0 through 4.0 in chronological order; 4.0 links back to the current main website. `history/montage-photos.json` lists the supplied photos, grouped by edition. The index plays all groups in order, while editions 1.0–3.0 show their own groups. The shared `montage.js` and `montage.css` provide a fade every 4.5 seconds, pause/play, previous/next buttons and keyboard navigation. Reduced-motion visitors start with playback paused.
+
+The original photos from folders 1, 2, and 3 are represented by 43 optimized WebP images under `history/montage-photos/`. Images retain their full composition, use descriptive alt text, and have embedded metadata removed. Only the current and next photos load initially. Original video files are retained in the repository, but the History and 1.0 pages now display photos in their place.

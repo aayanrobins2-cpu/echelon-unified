@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Echelon Tech Fest</title>
+    <title>Echelon History | Editions 1.0–4.0</title>
+    <link rel="stylesheet" href="montage.css">
+    <script src="montage.js" defer></script>
 </head>
-<body>
+<body class="history-home">
 
     <header>
-        <h1>Echelon Tech Fest</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="Homepage2023.html"> Echelon 2.0</a>
-            <a href="Homepage2022.html"> Echelon 1.0</a>
-            <a href="echelon3.0/index.html"> Echelon 3.0</a>
+        <h1>Echelon History</h1>
+        <nav class="history-editions" aria-label="Echelon editions, oldest to newest">
+            <a href="Homepage2022.html">Echelon 1.0</a>
+            <a href="Homepage2023.html">Echelon 2.0</a>
+            <a href="echelon3.0/index.html">Echelon 3.0</a>
+            <a href="../">Echelon 4.0 <span class="history-current">Current</span></a>
         </nav>
     </header>
     
@@ -24,11 +26,22 @@
         <h2 class="subtitle">Experience the Pinnacle of School Events</h2>
     </section>
     
-    <section class="video">
-        <video controls class="video">
-            <source src="ECHELON video 14-10-2023.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <section class="history-montage" data-montage="all" role="region" aria-roledescription="slideshow" aria-label="Moments from Echelon" tabindex="0">
+        <h2 class="history-montage__heading">Moments from Echelon</h2>
+        <p class="history-montage__intro">A photo journey through our past events.</p>
+        <figure class="history-montage__frame">
+            <img class="history-montage__image is-active" data-montage-image src="montage-photos/1/01.webp" alt="Students taking part in an outdoor activity at Echelon 1.0" width="1920" height="1280" decoding="async">
+            <img class="history-montage__image" data-montage-image alt="" aria-hidden="true" decoding="async">
+        </figure>
+        <div class="history-montage__bar">
+            <p class="history-montage__caption" data-montage-caption aria-live="off" aria-atomic="true"><span class="history-montage__edition" data-montage-edition>Echelon 1.0</span><span class="history-montage__count" data-montage-count>1 / 43</span></p>
+            <div class="history-montage__controls" data-montage-controls hidden>
+                <button type="button" class="history-montage__button" data-montage-previous aria-label="Previous photo">&#8592;</button>
+                <button type="button" class="history-montage__button" data-montage-toggle aria-label="Pause photo montage">Pause</button>
+                <button type="button" class="history-montage__button" data-montage-next aria-label="Next photo">&#8594;</button>
+            </div>
+        </div>
+        <p class="history-montage__error" data-montage-error role="status" hidden></p>
     </section>
 
     <section id="about">

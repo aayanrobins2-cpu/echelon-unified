@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
     
-    navToggle.addEventListener("click", function() {
+    if (navToggle && navMenu) navToggle.addEventListener("click", function() {
         if (navMenu.classList.contains("nav-menu-visible")) {
             navMenu.classList.remove("nav-menu-visible");
         } else {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const dropdown = document.querySelector(".dropdown");
     const dropdownContent = document.querySelector(".dropdown-content");
     
-    dropdown.addEventListener("click", function() {
+    if (dropdown && dropdownContent) dropdown.addEventListener("click", function() {
         if (dropdownContent.style.display === "block") {
             dropdownContent.style.display = "none";
         } else {
@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
+        const id = this.getAttribute("href").slice(1);
+        const target = id && document.getElementById(id);
+        if (!target) return;
         e.preventDefault();
-        
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        target.scrollIntoView({
             behavior: "smooth"
         });
     });
 });
 
 // If you have other scripts, include them below.
-const swiper = new Swiper('.swiper-container', {
+if (typeof Swiper === 'function' && document.querySelector('.swiper-container')) new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
 
