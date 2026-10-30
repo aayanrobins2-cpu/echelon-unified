@@ -1,157 +1,367 @@
 {
   "1": [
     {
-      "src": "montage-photos/1/01.webp",
-      "alt": "Students taking part in an outdoor activity at Echelon 1.0",
-      "edition": "1.0",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "src": "montage-photos/1/02.webp",
-      "alt": "A speaker addressing the opening ceremony at Echelon 1.0",
-      "edition": "1.0",
-      "width": 1920,
-      "height": 1280
-    },
-    {
-      "src": "montage-photos/1/03.webp",
-      "alt": "Students and organisers together in the hall at Echelon 1.0",
+      "src": "montage-photos/1/replacement-01.webp",
+      "alt": "Echelon banner displayed on campus at Echelon 1.0",
       "edition": "1.0",
       "width": 960,
       "height": 1440
     },
     {
-      "src": "montage-photos/1/04.webp",
-      "alt": "Participants gathered beside the Echelon banner at Echelon 1.0",
+      "src": "montage-photos/1/replacement-02.webp",
+      "alt": "Participants checking in at an outdoor registration table at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/1/05.webp",
-      "alt": "Students discussing an event challenge at Echelon 1.0",
+      "src": "montage-photos/1/replacement-03.webp",
+      "alt": "Organisers handing event lanyards to a participant at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/1/06.webp",
-      "alt": "Students presenting their work to a judge at Echelon 1.0",
+      "src": "montage-photos/1/replacement-04.webp",
+      "alt": "Students gathered beside the registration area at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "montage-photos/1/replacement-05.webp",
+      "alt": "Organisers welcoming students at the registration table at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "montage-photos/1/replacement-06.webp",
+      "alt": "Participants arriving on the school campus at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/1/07.webp",
-      "alt": "A speaker at the Echelon podium at Echelon 1.0",
+      "src": "montage-photos/1/replacement-07.webp",
+      "alt": "Two student organisers wearing event rosettes at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/1/08.webp",
-      "alt": "Participants watching a presentation at Echelon 1.0",
+      "src": "montage-photos/1/replacement-08.webp",
+      "alt": "Student organisers seated beside the Echelon banner at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/1/09.webp",
-      "alt": "The audience gathered in the hall at Echelon 1.0",
+      "src": "montage-photos/1/replacement-09.webp",
+      "alt": "Participants and organisers posing in a school corridor at Echelon 1.0",
       "edition": "1.0",
       "width": 1920,
       "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-10.webp",
+      "alt": "Organisers preparing documents beside a window at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-11.webp",
+      "alt": "Guests taking part in a ceremonial lamp lighting at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-12.webp",
+      "alt": "A student speaking at the opening ceremony at Echelon 1.0",
+      "edition": "1.0",
+      "width": 960,
+      "height": 1440
+    },
+    {
+      "src": "montage-photos/1/replacement-13.webp",
+      "alt": "Participants discussing an event task with an organiser at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-14.webp",
+      "alt": "Students taking part in an outdoor group activity at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-15.webp",
+      "alt": "A student reading from notes at the lectern at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-16.webp",
+      "alt": "Participants and guests seated in the auditorium at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-17.webp",
+      "alt": "A student presenting at the lectern at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-18.webp",
+      "alt": "Guests watching a presentation in the auditorium at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-19.webp",
+      "alt": "The audience facing the auditorium stage at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-20.webp",
+      "alt": "Two speakers addressing the gathering at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "montage-photos/1/replacement-21.webp",
+      "alt": "Participants seated together in the auditorium at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-22.webp",
+      "alt": "Students gathered in an outdoor activity area at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "montage-photos/1/replacement-23.webp",
+      "alt": "Organisers reviewing event papers together at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "montage-photos/1/replacement-24.webp",
+      "alt": "Guests seated at the front of the auditorium at Echelon 1.0",
+      "edition": "1.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/1/replacement-25.webp",
+      "alt": "A student addressing the audience from the lectern at Echelon 1.0",
+      "edition": "1.0",
+      "width": 960,
+      "height": 1440
+    },
+    {
+      "src": "montage-photos/1/replacement-26.webp",
+      "alt": "A student speaking from the school podium at Echelon 1.0",
+      "edition": "1.0",
+      "width": 960,
+      "height": 1440
     }
   ],
   "2": [
     {
-      "src": "montage-photos/2/01.webp",
-      "alt": "Students introducing an Echelon event at Echelon 2.0",
+      "src": "montage-photos/2/replacement-01.webp",
+      "alt": "Echelon banner and decorations at the school entrance at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 705
+    },
+    {
+      "src": "montage-photos/2/replacement-02.webp",
+      "alt": "Students working at computers in the lab at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1440
     },
     {
-      "src": "montage-photos/2/02.webp",
-      "alt": "Participants working in the computer lab at Echelon 2.0",
-      "edition": "2.0",
-      "width": 1920,
-      "height": 1440
-    },
-    {
-      "src": "montage-photos/2/03.webp",
-      "alt": "Students presenting their project at Echelon 2.0",
-      "edition": "2.0",
-      "width": 1920,
-      "height": 1440
-    },
-    {
-      "src": "montage-photos/2/04.webp",
-      "alt": "A speaker at the school podium at Echelon 2.0",
-      "edition": "2.0",
-      "width": 1920,
-      "height": 1279
-    },
-    {
-      "src": "montage-photos/2/05.webp",
-      "alt": "Electronic components displayed for a challenge at Echelon 2.0",
+      "src": "montage-photos/2/replacement-03.webp",
+      "alt": "An Embrace Diversity display at the school entrance at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/06.webp",
-      "alt": "A student project built from reused materials at Echelon 2.0",
+      "src": "montage-photos/2/replacement-04.webp",
+      "alt": "Paper figures displayed on campus at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/07.webp",
-      "alt": "A robot assembled from electronic components at Echelon 2.0",
+      "src": "montage-photos/2/replacement-05.webp",
+      "alt": "Participants gathering at the outdoor registration table at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-06.webp",
+      "alt": "Participants posing together in the school courtyard at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-07.webp",
+      "alt": "Guests taking part in a ceremonial lamp lighting at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-08.webp",
+      "alt": "Guests and participants seated in the auditorium at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-09.webp",
+      "alt": "An audience gathered for the ceremony at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-10.webp",
+      "alt": "A speaker addressing the audience from the podium at Echelon 2.0",
       "edition": "2.0",
       "width": 960,
       "height": 1440
     },
     {
-      "src": "montage-photos/2/08.webp",
-      "alt": "A team explaining its project to judges at Echelon 2.0",
+      "src": "montage-photos/2/replacement-11.webp",
+      "alt": "Student-made electronic projects displayed on a table at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/09.webp",
-      "alt": "Students collaborating on a challenge at Echelon 2.0",
+      "src": "montage-photos/2/replacement-12.webp",
+      "alt": "Students collaborating at a computer at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/10.webp",
-      "alt": "Judges reviewing student presentations at Echelon 2.0",
+      "src": "montage-photos/2/replacement-13.webp",
+      "alt": "An event-room doorway decorated with a banner at Echelon 2.0",
+      "edition": "2.0",
+      "width": 960,
+      "height": 1440
+    },
+    {
+      "src": "montage-photos/2/replacement-14.webp",
+      "alt": "A student-built electronic model on display at Echelon 2.0",
+      "edition": "2.0",
+      "width": 960,
+      "height": 1440
+    },
+    {
+      "src": "montage-photos/2/replacement-15.webp",
+      "alt": "A participant working on a laptop in the computer lab at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/11.webp",
-      "alt": "A student presenting to the audience at Echelon 2.0",
+      "src": "montage-photos/2/replacement-16.webp",
+      "alt": "Participants working side by side on laptops at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/12.webp",
-      "alt": "Organisers exchanging a gift at Echelon 2.0",
+      "src": "montage-photos/2/replacement-17.webp",
+      "alt": "A guest receiving a presentation gift at Echelon 2.0",
+      "edition": "2.0",
+      "width": 960,
+      "height": 1440
+    },
+    {
+      "src": "montage-photos/2/replacement-18.webp",
+      "alt": "Organisers presenting a gift to a guest at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/2/13.webp",
-      "alt": "Guests at the event presentation at Echelon 2.0",
+      "src": "montage-photos/2/replacement-19.webp",
+      "alt": "A guest and organiser posing with a presentation gift at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-20.webp",
+      "alt": "Participants gathered onstage for the award ceremony at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-21.webp",
+      "alt": "Students lined up beside the school podium at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-22.webp",
+      "alt": "Students receiving certificates at the ceremony at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-23.webp",
+      "alt": "Certificate recipients posing with a guest at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-24.webp",
+      "alt": "Participants and organisers posing together onstage at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-25.webp",
+      "alt": "The Embrace Diversity display at Echelon 2.0",
+      "edition": "2.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/2/replacement-26.webp",
+      "alt": "Students and organisers in a group photograph on campus at Echelon 2.0",
       "edition": "2.0",
       "width": 1920,
       "height": 1280
@@ -159,148 +369,197 @@
   ],
   "3": [
     {
-      "src": "montage-photos/3/01.webp",
-      "alt": "Participants arriving at Echelon 3.0",
+      "src": "montage-photos/3/replacement-01.webp",
+      "alt": "The Bangalore International School entrance sign at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/02.webp",
-      "alt": "Students and guests gathered in the hall at Echelon 3.0",
+      "src": "montage-photos/3/replacement-02.webp",
+      "alt": "Participants arriving beside the event registration display at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/03.webp",
-      "alt": "The audience at the opening ceremony at Echelon 3.0",
+      "src": "montage-photos/3/replacement-03.webp",
+      "alt": "Students gathering in the school courtyard at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/04.webp",
-      "alt": "Students speaking at the Echelon podium at Echelon 3.0",
+      "src": "montage-photos/3/replacement-04.webp",
+      "alt": "Guests taking part in a ceremonial lamp lighting at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/05.webp",
-      "alt": "Participants watching a presentation at Echelon 3.0",
+      "src": "montage-photos/3/replacement-05.webp",
+      "alt": "Students hosting the opening ceremony at the podium at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/06.webp",
-      "alt": "Guests welcomed with flowers at Echelon 3.0",
+      "src": "montage-photos/3/replacement-06.webp",
+      "alt": "A speaker addressing participants in a classroom at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/07.webp",
-      "alt": "Guests and organisers posing together at Echelon 3.0",
+      "src": "montage-photos/3/replacement-07.webp",
+      "alt": "A guest speaking at the opening ceremony at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/08.webp",
-      "alt": "Guests receiving flowers at the event at Echelon 3.0",
+      "src": "montage-photos/3/replacement-08.webp",
+      "alt": "Guests and organisers posing with a bouquet at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/09.webp",
-      "alt": "Students demonstrating their project at Echelon 3.0",
+      "src": "montage-photos/3/replacement-09.webp",
+      "alt": "An organiser presenting a bouquet to a guest at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/10.webp",
-      "alt": "A team working together at a computer at Echelon 3.0",
+      "src": "montage-photos/3/replacement-10.webp",
+      "alt": "Students collaborating on an event task beside a laptop at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/11.webp",
-      "alt": "Equipment arranged for an event challenge at Echelon 3.0",
+      "src": "montage-photos/3/replacement-11.webp",
+      "alt": "Participants discussing a puzzle in the classroom at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/12.webp",
-      "alt": "Students working through a wall of clues at Echelon 3.0",
+      "src": "montage-photos/3/replacement-12.webp",
+      "alt": "Students working at a classroom puzzle station at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/13.webp",
-      "alt": "Students discussing a challenge together at Echelon 3.0",
+      "src": "montage-photos/3/replacement-13.webp",
+      "alt": "Participants receiving instructions for an event task at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/14.webp",
-      "alt": "A team standing beside the event clues at Echelon 3.0",
+      "src": "montage-photos/3/replacement-14.webp",
+      "alt": "Students posing together in the event classroom at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/15.webp",
-      "alt": "Students reviewing their work together at Echelon 3.0",
+      "src": "montage-photos/3/replacement-15.webp",
+      "alt": "Participants working on a tabletop challenge at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/16.webp",
-      "alt": "Students presenting a model to judges at Echelon 3.0",
+      "src": "montage-photos/3/replacement-16.webp",
+      "alt": "Students and organisers discussing a classroom challenge at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/17.webp",
-      "alt": "A team discussing its design at Echelon 3.0",
+      "src": "montage-photos/3/replacement-17.webp",
+      "alt": "Participants working at computers in the lab at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/18.webp",
-      "alt": "Participants collaborating in a classroom at Echelon 3.0",
+      "src": "montage-photos/3/replacement-18.webp",
+      "alt": "Students and organisers gathered in the computer lab at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/19.webp",
-      "alt": "A student demonstrating a project to a judge at Echelon 3.0",
+      "src": "montage-photos/3/replacement-19.webp",
+      "alt": "Participants explaining their computer work to an adult at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/20.webp",
-      "alt": "A judge examining a student project at Echelon 3.0",
+      "src": "montage-photos/3/replacement-20.webp",
+      "alt": "A participant at a computer during the event at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
     },
     {
-      "src": "montage-photos/3/21.webp",
-      "alt": "Students presenting at the front of a classroom at Echelon 3.0",
+      "src": "montage-photos/3/replacement-21.webp",
+      "alt": "Students solving a paper-based task together at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-22.webp",
+      "alt": "Medals prepared for the prize ceremony at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-23.webp",
+      "alt": "Students speaking into a microphone at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-24.webp",
+      "alt": "Participants presenting to an audience in a classroom at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-25.webp",
+      "alt": "A participant explaining a project to a judge at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-26.webp",
+      "alt": "Students speaking at the school podium at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-27.webp",
+      "alt": "Students and organisers discussing a tabletop project at Echelon 3.0",
+      "edition": "3.0",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "src": "montage-photos/3/replacement-28.webp",
+      "alt": "Participants presenting an electronic model to a judge at Echelon 3.0",
       "edition": "3.0",
       "width": 1920,
       "height": 1280
