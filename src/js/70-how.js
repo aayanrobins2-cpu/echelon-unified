@@ -43,7 +43,7 @@ function createWell(section) {
     const th = i * Math.PI * (3 - Math.sqrt(5));
     return [Math.cos(th) * rr, y, Math.sin(th) * rr];
   });
-  const ORB_COLORS = ['#FFC266', '#FF8A4C', '#FF4D8D', '#A259FF', '#3D7BFF', '#33D1FF'];
+  const ORB_COLORS = ['#00D9FF', '#89D8FF', '#00E5C3', '#2979FF', '#FFFFFF', '#00D9FF'];
 
   let W = 0, H = 0, dpr = 1;
   let progressOf = () => 0.35;
@@ -171,7 +171,7 @@ function createWell(section) {
       const x = P[0] - w / 2, y = P[1] - h / 2;
       ctx.globalAlpha = alpha;
       roundRect(x, y, w, h, 9 * s);
-      ctx.fillStyle = 'rgba(20,20,26,0.82)';
+      ctx.fillStyle = 'rgba(6,17,26,0.82)';
       ctx.fill();
       ctx.strokeStyle = 'rgba(255,255,255,0.24)';
       ctx.lineWidth = 1 * dpr;
@@ -200,9 +200,9 @@ function createWell(section) {
       const R = Math.min(W, H) * 0.16 * q;
       const cy = T[1] - R * 0.35 * q;
       const g = ctx.createRadialGradient(T[0], cy, 0, T[0], cy, R * 2.2);
-      g.addColorStop(0, `rgba(255,170,90,${(0.55 * q).toFixed(3)})`);
-      g.addColorStop(0.45, `rgba(255,77,141,${(0.3 * q).toFixed(3)})`);
-      g.addColorStop(1, 'rgba(61,123,255,0)');
+      g.addColorStop(0, `rgba(0,217,255,${(0.55 * q).toFixed(3)})`);
+      g.addColorStop(0.45, `rgba(0,229,195,${(0.3 * q).toFixed(3)})`);
+      g.addColorStop(1, 'rgba(41,121,255,0)');
       ctx.fillStyle = g;
       ctx.fillRect(T[0] - R * 2.2, cy - R * 2.2, R * 4.4, R * 4.4);
       const rot = time * 0.4;

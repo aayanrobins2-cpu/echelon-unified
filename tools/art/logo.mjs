@@ -26,7 +26,7 @@ const write = (rel, data) => { fs.mkdirSync(path.dirname(path.join(root, rel)), 
 
 // --- SVG files ---
 write('assets/logos/echelon-logo.svg', fullLogo({ id: 'd' }) + '\n');
-write('assets/logos/echelon-logo-light.svg', fullLogo({ id: 'l', trace: '#1D2140', ink: INK.light, words: '#4B4F7A' }) + '\n');
+write('assets/logos/echelon-logo-light.svg', fullLogo({ id: 'l', trace: '#0C2940', ink: INK.light, words: '#28516D' }) + '\n');
 write('assets/logos/echelon-emblem.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Echelon">${emblem({ id: 'e', trace: '#FFFFFF' })}</svg>\n`);
 // The favicon: the tree on a black tile, a little heavier so it reads at 16 px.
 const icon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#000"/><g transform="translate(5 4) scale(.84)">${emblem({ id: 'f', trace: '#FFFFFF', weight: 3.2 })}</g></svg>`;
@@ -38,13 +38,13 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const og = `<!doctype html><meta charset="utf-8"><style>
 html,body{margin:0;width:1200px;height:630px;background:#000;overflow:hidden}
 body{display:flex;align-items:center;gap:56px;padding:0 72px;box-sizing:border-box;font-family:Inter,sans-serif;color:#F5F5F7;
-background:radial-gradient(600px 420px at 290px 330px,rgba(61,123,255,.22),transparent 70%),radial-gradient(500px 380px at 1100px 640px,rgba(61,220,151,.12),transparent 70%),#000}
+background:radial-gradient(600px 420px at 290px 330px,rgba(41,121,255,.22),transparent 70%),radial-gradient(500px 380px at 1100px 640px,rgba(0,229,195,.12),transparent 70%),#000}
 svg{width:440px;flex:none}
-.k{font-size:18px;white-space:nowrap;letter-spacing:.12em;text-transform:uppercase;color:#8EB5FF;margin:0 0 18px}
+.k{font-size:18px;white-space:nowrap;letter-spacing:.12em;text-transform:uppercase;color:#89D8FF;margin:0 0 18px}
 h1{font-family:'Inter Display',Inter,sans-serif;font-weight:600;font-size:76px;line-height:1;margin:0 0 22px;letter-spacing:-.02em}
 p{font-size:28px;line-height:1.4;margin:0;color:#C7C7CC}
 .d{margin-top:30px;font-size:30px;color:#fff;font-weight:500}
-.s{margin-top:8px;font-size:24px;color:#A1A1A6}
+.s{margin-top:8px;font-size:24px;color:#A4B8C7}
 </style>
 <body>${fullLogo({ id: 'o' }).replace('<svg ', '<svg width="440" ')}
 <div><p class="k">${esc(e.presenter)}</p><h1>Echelon 4.0</h1>

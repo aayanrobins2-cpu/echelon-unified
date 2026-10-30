@@ -55,8 +55,8 @@ float hash1(float n) { return fract(sin(n * 12.9898) * 43758.5453); }
 // Every stage uses the Echelon blue, green and white palette.
 vec3 iris(float t) {
   float band = floor(fract(t) * 3.0);
-  if (band < 1.0) return vec3(0.24, 0.48, 1.0);
-  if (band < 2.0) return vec3(0.24, 0.86, 0.59);
+  if (band < 1.0) return vec3(0.16, 0.47, 1.0);
+  if (band < 2.0) return vec3(0.0, 0.90, 0.76);
   return vec3(1.0);
 }
 mat3 rotY(float a) { float c = cos(a); float s = sin(a); return mat3(c, 0.0, -s, 0.0, 1.0, 0.0, s, 0.0, c); }
@@ -263,8 +263,8 @@ function earthColours(sphere, N, rnd) {
     let col;
     if (px[k + 2] > 128 || lat < -64 || lat > 80) col = [1.0, 1.0, 1.0];
     else if (px[k] > 128) {
-      col = [0.24, 0.86, 0.59];
-    } else col = [0.24, 0.48, 1.0];
+      col = [0.0, 0.90, 0.76];
+    } else col = [0.16, 0.47, 1.0];
     out.set(col.map((ch) => Math.min(1, ch * v)), i * 3);
   }
   return out;

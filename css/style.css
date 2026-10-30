@@ -44,25 +44,25 @@
 
 :root {
   --bg: #000000;
-  --bg-1: #0B0B0E;
-  --bg-2: #131317;
+  --bg-1: #06111A;
+  --bg-2: #0B1C28;
   --line: rgba(255, 255, 255, 0.1);
   --line-2: rgba(255, 255, 255, 0.18);
   --text: #F5F5F7;
-  --text-2: #A1A1A6;
-  --text-3: #86868B;
+  --text-2: #A4B8C7;
+  --text-3: #91A8B9;
 
-  --amber: #FFB547;
-  --orange: #FF7A3D;
-  --pink: #FF4D8D;
-  --violet: #A259FF;
-  --blue: #3D7BFF;
-  --cyan: #33D1FF;
-  --lcd: #3DDC97;
+  --amber: #00D9FF;
+  --orange: #00D9FF;
+  --pink: #00E5C3;
+  --violet: #2979FF;
+  --blue: #2979FF;
+  --cyan: #00D9FF;
+  --lcd: #00E5C3;
 
-  --iris: linear-gradient(100deg, #3D7BFF 0%, #FFFFFF 50%, #3DDC97 100%);
-  --warm: linear-gradient(95deg, #FFFFFF 0%, #8EB5FF 36%, #3D7BFF 52%, #3DDC97 100%);
-  --gold: linear-gradient(105deg, #FFFFFF 0%, #8EB5FF 40%, #FFFFFF 52%, #3DDC97 65%, #FFFFFF 100%);
+  --iris: linear-gradient(100deg, #2979FF 0%, #FFFFFF 50%, #00E5C3 100%);
+  --warm: linear-gradient(95deg, #FFFFFF 0%, #89D8FF 36%, #2979FF 52%, #00E5C3 100%);
+  --gold: linear-gradient(105deg, #FFFFFF 0%, #89D8FF 40%, #FFFFFF 52%, #00E5C3 65%, #FFFFFF 100%);
 
   --font-display: "Cabinet Grotesk", "Cabinet Fallback A", "Cabinet Fallback R", system-ui, sans-serif;
   --font-body: "Satoshi", "Satoshi Fallback A", "Satoshi Fallback R", system-ui, sans-serif;
@@ -123,7 +123,7 @@ img, svg, canvas { display: block; max-width: 100%; }
 a { color: inherit; text-underline-offset: 0.2em; }
 h1, h2, h3, h4 { text-wrap: balance; }
 p { text-wrap: pretty; }
-::selection { background: rgba(162, 89, 255, 0.45); color: #fff; }
+::selection { background: rgba(0, 217, 255, 0.45); color: #fff; }
 
 :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 6px; }
 
@@ -171,9 +171,9 @@ p { text-wrap: pretty; }
 /* Placeholder marks: impossible to miss, so nothing unconfirmed goes live by accident. */
 mark.ph {
   padding: 0.05em 0.45em 0.1em;
-  border: 1px dashed rgba(255, 194, 102, 0.8);
+  border: 1px dashed rgba(0, 229, 195, 0.8);
   border-radius: 6px;
-  background: rgba(255, 194, 102, 0.08);
+  background: rgba(0, 229, 195, 0.08);
   color: var(--text);
   font-size: 0.92em;
   -webkit-box-decoration-break: clone;
@@ -297,9 +297,9 @@ mark.ph {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 95% at 12% 0%, var(--c1, #FF7A3D), transparent 62%),
-    radial-gradient(110% 100% at 95% 100%, var(--c2, #A259FF), transparent 64%),
-    linear-gradient(160deg, var(--c3, #140B2A), #050508);
+    radial-gradient(120% 95% at 12% 0%, var(--c1, #00D9FF), transparent 62%),
+    radial-gradient(110% 100% at 95% 100%, var(--c2, #2979FF), transparent 64%),
+    linear-gradient(160deg, var(--c3, #041C32), #030A12);
 }
 .art::after {
   content: "";
@@ -349,7 +349,7 @@ mark.ph {
   min-height: 2.75rem;
   text-decoration: none;
 }
-.brand__mark { width: 2rem; height: 2rem; color: #fff; filter: drop-shadow(0 0 8px rgba(61, 220, 151, 0.35)); }
+.brand__mark { width: 2rem; height: 2rem; color: #fff; filter: drop-shadow(0 0 8px rgba(0, 229, 195, 0.35)); }
 .brand__word { font: 500 1.45rem / 1 var(--font-display); letter-spacing: -0.035em; }
 
 .nav { justify-self: center; position: relative; }
@@ -432,7 +432,7 @@ mark.ph {
     gap: 0.25rem;
     padding: 0.75rem;
     border-radius: var(--radius-l);
-    background: rgba(18, 18, 22, 0.92);
+    background: rgba(6, 17, 26, 0.92);
   }
   .js .site-header.is-open .nav__list { display: flex; }
   .js .nav__list a { min-height: 3.25rem; font-size: 1.2rem; color: var(--text); }
@@ -485,8 +485,8 @@ mark.ph {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(40% 50% at 0% 100%, rgba(61, 123, 255, 0.16), transparent 70%),
-    radial-gradient(35% 45% at 100% 0%, rgba(61, 220, 151, 0.12), transparent 70%);
+    radial-gradient(40% 50% at 0% 100%, rgba(41, 121, 255, 0.16), transparent 70%),
+    radial-gradient(35% 45% at 100% 0%, rgba(0, 229, 195, 0.12), transparent 70%);
 }
 .hero__grid {
   position: relative;
@@ -498,12 +498,12 @@ mark.ph {
 .hero__copy { position: relative; z-index: 2; max-width: 42rem; }
 
 .bis-logo { display: block; object-fit: contain; flex: none; border-radius: 0.7rem; background: #F5F5F5; }
-.hero__presenter { display: flex; align-items: center; gap: 0.8rem; margin: 0 0 1.25rem; color: #B8D4FF; font: 500 clamp(0.8rem, 0.7rem + 0.3vw, 0.98rem) / 1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.hero__presenter { display: flex; align-items: center; gap: 0.8rem; margin: 0 0 1.25rem; color: #B5EFFF; font: 500 clamp(0.8rem, 0.7rem + 0.3vw, 0.98rem) / 1.45 ui-monospace, SFMono-Regular, Consolas, monospace; }
 .hero__school-logo { width: 3.75rem; height: auto; }
 .typewriter { display: inline-block; position: relative; }
 .typewriter__sizer { visibility: hidden; }
 .typewriter__text { position: absolute; inset: 0; }
-.typewriter.is-typing .typewriter__text::after { content: "▌"; color: #3DDC97; animation: typing-caret 0.7s steps(1) infinite; }
+.typewriter.is-typing .typewriter__text::after { content: "▌"; color: #00E5C3; animation: typing-caret 0.7s steps(1) infinite; }
 @keyframes typing-caret { 50% { opacity: 0; } }
 .site-footer__school { display: flex; align-items: center; gap: 0.8rem; margin-top: 1rem; }
 .footer__school-logo { width: 3.5rem; height: auto; }
@@ -522,7 +522,7 @@ mark.ph {
   margin: 0;
   font: 500 clamp(3rem, 20cqw, 8rem) / 0.86 var(--font-display);
   letter-spacing: -0.055em;
-  background: linear-gradient(180deg, #FFFFFF 35%, #A6A6AE 100%);
+  background: linear-gradient(180deg, #FFFFFF 35%, #B2CCDD 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -543,7 +543,7 @@ mark.ph {
   padding: 0.75rem 1rem 0.7rem;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, #0E0E12, #08080A);
+  background: linear-gradient(180deg, #081722, #050E16);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 .lcd__label { margin: 0 0 0.45rem; color: var(--text-3); font-size: 0.78rem; font-weight: 500; }
@@ -554,7 +554,7 @@ mark.ph {
   position: relative;
   color: var(--lcd);
   font: 700 1.55rem / 1 var(--font-lcd);
-  text-shadow: 0 0 10px rgba(255, 181, 71, 0.55);
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.55);
   font-variant-numeric: tabular-nums;
 }
 .lcd__digits::before,
@@ -562,10 +562,10 @@ mark.ph {
   content: attr(data-ghost);
   position: absolute;
   inset: 0;
-  color: rgba(255, 194, 102, 0.09);
+  color: rgba(0, 229, 195, 0.09);
   text-shadow: none;
 }
-.lcd__colon { color: rgba(255, 194, 102, 0.6); font: 700 1.3rem / 1.2 var(--font-lcd); }
+.lcd__colon { color: rgba(0, 229, 195, 0.6); font: 700 1.3rem / 1.2 var(--font-lcd); }
 .lcd__unit { color: var(--text-3); font-size: 0.7rem; }
 .lcd__status { margin: 0.55rem 0 0; color: var(--text-2); font-size: 0.85rem; }
 .no-js .lcd__screen { display: none; }
@@ -590,7 +590,7 @@ mark.ph {
   position: absolute;
   inset: 18%;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, transparent 52%, rgba(80, 160, 255, 0.35) 62%, rgba(61, 123, 255, 0.18) 68%, transparent 74%);
+  background: radial-gradient(circle at 50% 50%, transparent 52%, rgba(80, 160, 255, 0.35) 62%, rgba(41, 121, 255, 0.18) 68%, transparent 74%);
   filter: blur(40px);
 }
 /* Still orb for browsers without JavaScript / WebGL: a dotted, lit sphere in CSS. */
@@ -599,7 +599,7 @@ mark.ph {
   inset: 20%;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 35% 30%, #FFFFFF 0%, #3DDC97 45%, #3D7BFF 100%);
+    radial-gradient(circle at 35% 30%, #FFFFFF 0%, #00E5C3 45%, #2979FF 100%);
   -webkit-mask: radial-gradient(circle, #000 0.9px, transparent 1.4px) 0 0 / 5px 5px, radial-gradient(circle, #000 60%, transparent 71%);
   -webkit-mask-composite: source-in;
   mask: radial-gradient(circle, #000 0.9px, transparent 1.4px) 0 0 / 5px 5px intersect, radial-gradient(circle, #000 60%, transparent 71%);
@@ -607,7 +607,7 @@ mark.ph {
 .has-orb .hero__poster { opacity: 0; transition: opacity 0.6s; }
 /* The official arched ECHELON, around the top of the globe (the globe's radius is 30% of the
    slot, the ring's 47%; the letters stand between them). It fades in as the intro hands over. */
-.hero__logo { color: rgba(201, 206, 255, 0.72); position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; transition: opacity 1.4s var(--ease) 0.5s, transform 1.6s var(--ease-out) 0.5s; }
+.hero__logo { color: rgba(137, 216, 255, 0.72); position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; transition: opacity 1.4s var(--ease) 0.5s, transform 1.6s var(--ease-out) 0.5s; }
 /* The words around the arch are too small to read on narrow screens; the About section lists them. */
 @media (max-width: 40rem) { .hero__logo .arch-words { display: none; } }
 .hero-enter .hero__logo { opacity: 0; transform: scale(0.94); transition: none; }
@@ -707,7 +707,7 @@ html:not(.fx-off) .marquee { animation: marquee 70s linear infinite; }
 .acrostic__title { margin: 0 0 1.5rem; color: var(--text-2); font: 500 var(--step-1) / 1.3 var(--font-body); }
 .acrostic__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
 .acrostic__list li { display: grid; gap: 0.35rem; justify-items: center; padding: 1.1rem 0.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 255, 255, 0.02); }
-.acrostic__letter { font: 600 2.6rem / 1 var(--font-display); color: #9AA6FF; text-shadow: -1.5px 0 rgba(255, 42, 157, 0.75), 1.5px 0 rgba(51, 225, 255, 0.75); }
+.acrostic__letter { font: 600 2.6rem / 1 var(--font-display); color: #89D8FF; text-shadow: -1.5px 0 rgba(0, 229, 195, 0.75), 1.5px 0 rgba(51, 225, 255, 0.75); }
 .acrostic__word { font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); }
 .statement {
   max-width: 16ch;
@@ -725,7 +725,7 @@ html:not(.fx-off) .marquee { animation: marquee 70s linear infinite; }
   overflow: hidden;
   border-radius: var(--radius-xl);
   border: 1px solid var(--line);
-  background: #050507;
+  background: #040D15;
 }
 .about__media img {
   position: absolute;
@@ -939,7 +939,7 @@ html:not(.fx-off) .marquee { animation: marquee 70s linear infinite; }
   padding: 0.6rem 0.6rem clamp(1.25rem, 3vw, 2rem);
   border-radius: var(--radius-xl);
   border: 1px solid var(--line-2);
-  background: rgba(17, 17, 21, 0.92);
+  background: rgba(6, 17, 26, 0.92);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
   backdrop-filter: blur(24px) saturate(150%);
   box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -970,8 +970,8 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   padding: 1.1rem 1.4rem;
   border-radius: var(--radius-l);
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, #0E0E12, #07070A);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 30px 80px -40px rgba(255, 181, 71, 0.35);
+  background: linear-gradient(180deg, #081722, #040D15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 30px 80px -40px rgba(0, 217, 255, 0.35);
 }
 .clock__digits { font-size: clamp(2.6rem, 2rem + 3vw, 4.6rem); }
 .clock__range { margin: 0.8rem 0 0; color: var(--text-3); font-size: 0.9rem; }
@@ -1003,7 +1003,7 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   border-radius: 50%;
   border: 2px solid var(--pink);
   background: var(--pink);
-  box-shadow: 0 0 14px rgba(255, 77, 141, 0.7);
+  box-shadow: 0 0 14px rgba(0, 229, 195, 0.7);
   transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .day.is-scrubbing .day__item:not(.is-lit) .day__node { background: var(--bg); border-color: var(--line-2); box-shadow: none; }
@@ -1229,15 +1229,15 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
   height: 0.6rem;
   margin: -0.3rem 0 0 -0.3rem;
   border-radius: 50%;
-  background: #3DDC97;
-  box-shadow: 0 0 0.75rem rgba(61, 220, 151, 0.8);
+  background: #00E5C3;
+  box-shadow: 0 0 0.75rem rgba(0, 229, 195, 0.8);
   opacity: 0;
 }
 .intro__pin::after {
   content: "";
   position: absolute;
   inset: -0.2rem;
-  border: 1.5px solid #3DDC97;
+  border: 1.5px solid #00E5C3;
   border-radius: 50%;
   animation: intro-pin 1.4s ease-out infinite;
 }
@@ -1270,7 +1270,7 @@ html:not(.fx-off) .dialog[open] .dialog__panel { animation: dialog-in 0.5s var(-
 }
 .intro__caption { top: 50%; display: grid; justify-items: center; gap: 1rem; }
 .intro__school-logo { width: 7rem; height: auto; }
-.intro__caption .typewriter { max-width: 38rem; color: #DCE9FF; font: 500 clamp(1rem, 0.8rem + 1vw, 1.6rem) / 1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -0.02em; }
+.intro__caption .typewriter { max-width: 38rem; color: #DDF8FF; font: 500 clamp(1rem, 0.8rem + 1vw, 1.6rem) / 1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: -0.02em; }
 .intro__word { top: 50%; font: 500 clamp(4rem, 2rem + 12vw, 12rem) / 1 var(--font-display); letter-spacing: -0.055em; }
 .intro__tagline {
   /* The particle word is drawn at scale min(23.5vw, 42vh) (see 10-orb.js), and

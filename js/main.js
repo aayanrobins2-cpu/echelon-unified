@@ -131,8 +131,8 @@ float hash1(float n) { return fract(sin(n * 12.9898) * 43758.5453); }
 // Every stage uses the Echelon blue, green and white palette.
 vec3 iris(float t) {
   float band = floor(fract(t) * 3.0);
-  if (band < 1.0) return vec3(0.24, 0.48, 1.0);
-  if (band < 2.0) return vec3(0.24, 0.86, 0.59);
+  if (band < 1.0) return vec3(0.16, 0.47, 1.0);
+  if (band < 2.0) return vec3(0.0, 0.90, 0.76);
   return vec3(1.0);
 }
 mat3 rotY(float a) { float c = cos(a); float s = sin(a); return mat3(c, 0.0, -s, 0.0, 1.0, 0.0, s, 0.0, c); }
@@ -339,8 +339,8 @@ function earthColours(sphere, N, rnd) {
     let col;
     if (px[k + 2] > 128 || lat < -64 || lat > 80) col = [1.0, 1.0, 1.0];
     else if (px[k] > 128) {
-      col = [0.24, 0.86, 0.59];
-    } else col = [0.24, 0.48, 1.0];
+      col = [0.0, 0.90, 0.76];
+    } else col = [0.16, 0.47, 1.0];
     out.set(col.map((ch) => Math.min(1, ch * v)), i * 3);
   }
   return out;
@@ -1554,7 +1554,7 @@ function createWell(section) {
     const th = i * Math.PI * (3 - Math.sqrt(5));
     return [Math.cos(th) * rr, y, Math.sin(th) * rr];
   });
-  const ORB_COLORS = ['#FFC266', '#FF8A4C', '#FF4D8D', '#A259FF', '#3D7BFF', '#33D1FF'];
+  const ORB_COLORS = ['#00D9FF', '#89D8FF', '#00E5C3', '#2979FF', '#FFFFFF', '#00D9FF'];
 
   let W = 0, H = 0, dpr = 1;
   let progressOf = () => 0.35;
@@ -1682,7 +1682,7 @@ function createWell(section) {
       const x = P[0] - w / 2, y = P[1] - h / 2;
       ctx.globalAlpha = alpha;
       roundRect(x, y, w, h, 9 * s);
-      ctx.fillStyle = 'rgba(20,20,26,0.82)';
+      ctx.fillStyle = 'rgba(6,17,26,0.82)';
       ctx.fill();
       ctx.strokeStyle = 'rgba(255,255,255,0.24)';
       ctx.lineWidth = 1 * dpr;
@@ -1711,9 +1711,9 @@ function createWell(section) {
       const R = Math.min(W, H) * 0.16 * q;
       const cy = T[1] - R * 0.35 * q;
       const g = ctx.createRadialGradient(T[0], cy, 0, T[0], cy, R * 2.2);
-      g.addColorStop(0, `rgba(255,170,90,${(0.55 * q).toFixed(3)})`);
-      g.addColorStop(0.45, `rgba(255,77,141,${(0.3 * q).toFixed(3)})`);
-      g.addColorStop(1, 'rgba(61,123,255,0)');
+      g.addColorStop(0, `rgba(0,217,255,${(0.55 * q).toFixed(3)})`);
+      g.addColorStop(0.45, `rgba(0,229,195,${(0.3 * q).toFixed(3)})`);
+      g.addColorStop(1, 'rgba(41,121,255,0)');
       ctx.fillStyle = g;
       ctx.fillRect(T[0] - R * 2.2, cy - R * 2.2, R * 4.4, R * 4.4);
       const rot = time * 0.4;
@@ -1774,7 +1774,7 @@ function createWell(section) {
 function createDots(canvas) {
   const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
   if (!ctx) return null;
-  const COLORS = [[255, 255, 255], [196, 160, 255], [255, 150, 196], [150, 178, 255]];
+  const COLORS = [[255, 255, 255], [0, 217, 255], [0, 229, 195], [41, 121, 255]];
   const LEVELS = 10;
   const styles = COLORS.map((c) => Array.from({ length: LEVELS }, (_, l) => `rgba(${c[0]},${c[1]},${c[2]},${((l + 1) / LEVELS * 0.8).toFixed(2)})`));
   let W = 0, H = 0, dpr = 1, gap = 17, cols = 0, rows = 0;

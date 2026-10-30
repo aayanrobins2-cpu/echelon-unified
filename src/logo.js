@@ -17,7 +17,7 @@ const LETTERS = {
 };
 
 // Blue and green variants for dark and light backgrounds.
-export const INK = { dark: ['#8EB5FF', '#3DDC97'], light: ['#2357B8', '#16764D'] };
+export const INK = { dark: ['#89D8FF', '#00E5C3'], light: ['#175BB8', '#00756C'] };
 
 // The word on an arch around (0, 0): each letter stands on a circle of radius `r`,
 // `h` tall, `step` degrees apart, upright to the circle like the original.
@@ -46,7 +46,7 @@ export function arch({ r, h, step, id = 'echelon', ink = INK.dark, glow = true, 
   return (glow ? `<defs><filter id="${id}-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="${(h * 0.14).toFixed(2)}"/></filter></defs>` : '')
     + `<g fill="none" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round">`
     + (glow ? `<g filter="url(#${id}-glow)" opacity=".5">${letters()}</g>` : '')
-    + (offset ? letters('#FF2A9D', -0.55 * s, 0.85) + letters('#33E1FF', 0.55 * s, 0.85) : '')
+    + (offset ? letters('#00E5C3', -0.55 * s, 0.85) + letters('#00D9FF', 0.55 * s, 0.85) : '')
     + letters()
     + '</g>'
     + (words ? `<g class="arch-words" fill="${words}" font-size="${size}" font-family="Satoshi, Inter, system-ui, sans-serif" font-weight="500" letter-spacing="${(size * 0.22).toFixed(2)}" text-anchor="middle">`
@@ -62,8 +62,8 @@ export function arch({ r, h, step, id = 'echelon', ink = INK.dark, glow = true, 
 export function emblem({ id = 'emblem', trace = 'currentColor', weight = 2.2 } = {}) {
   // Branches rise from the trunk at 45 degrees, then run straight, like circuit traces.
   const nodes = [[32, 4.5], [11.5, 27], [52.5, 21], [24, 8.5], [40, 9.5], [10.5, 37.5], [53.5, 33]];
-  return `<defs><radialGradient id="${id}-node" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#C9FFE4"/><stop offset=".55" stop-color="#3DDC97"/><stop offset="1" stop-color="#1F9E6A"/></radialGradient>`
-    + `<linearGradient id="${id}-plug" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8EB5FF"/><stop offset="1" stop-color="#3D7BFF"/></linearGradient></defs>`
+  return `<defs><radialGradient id="${id}-node" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#CCFFF8"/><stop offset=".55" stop-color="#00E5C3"/><stop offset="1" stop-color="#008F84"/></radialGradient>`
+    + `<linearGradient id="${id}-plug" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#89D8FF"/><stop offset="1" stop-color="#2979FF"/></linearGradient></defs>`
     + `<g fill="none" stroke="${trace}" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round">`
     + '<path d="M30 43V38L32 36L34 38V43M32 36V7"/>' // two lines from the plug join into the trunk
     + '<path d="M32 33L26 27H14M32 25L26 19V11M32 40H16L12.7 36.7"/>' // left branches
@@ -77,7 +77,7 @@ export function emblem({ id = 'emblem', trace = 'currentColor', weight = 2.2 } =
 
 // The full logo, as in the original artwork: the arched word over the tree.
 // Standalone SVG files (assets/logos/) use this.
-export function fullLogo({ trace = '#FFFFFF', ink = INK.dark, id = 'logo', words = '#DCE9FF' } = {}) {
+export function fullLogo({ trace = '#FFFFFF', ink = INK.dark, id = 'logo', words = '#DDF8FF' } = {}) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -150 300 230" role="img" aria-label="Echelon: Embrace, Cultural, Harmony, Equality, Languages, Openness, Nuances">`
     + arch({ r: 62, h: 40, step: 28, id: `${id}-a`, ink, words, size: 6.5, wordGap: 14 })
     + `<g transform="translate(-46 -50) scale(1.44)">${emblem({ id: `${id}-e`, trace })}</g>`

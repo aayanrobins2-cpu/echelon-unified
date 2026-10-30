@@ -7,7 +7,7 @@
 function createDots(canvas) {
   const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
   if (!ctx) return null;
-  const COLORS = [[255, 255, 255], [196, 160, 255], [255, 150, 196], [150, 178, 255]];
+  const COLORS = [[255, 255, 255], [0, 217, 255], [0, 229, 195], [41, 121, 255]];
   const LEVELS = 10;
   const styles = COLORS.map((c) => Array.from({ length: LEVELS }, (_, l) => `rgba(${c[0]},${c[1]},${c[2]},${((l + 1) / LEVELS * 0.8).toFixed(2)})`));
   let W = 0, H = 0, dpr = 1, gap = 17, cols = 0, rows = 0;
