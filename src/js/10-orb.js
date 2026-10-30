@@ -509,6 +509,14 @@ async function createOrb(canvas, slot) {
     raf = requestAnimationFrame(loop);
   }
   function stop() { running = false; cancelAnimationFrame(raf); }
+  // Freeze the current particle frame without changing its colours.
+  function hold() {
+    const now = performance.now();
+    stop();
+    frozenTime = (now - t0) / 1000;
+    canvas.style.visibility = '';
+    draw(now);
+  }
   // A single still frame (reduced motion / effects off).
   function still() {
     stop();
@@ -538,5 +546,5 @@ async function createOrb(canvas, slot) {
     .then(idle)
     .then(() => setWord($('#hero-title')?.textContent.trim() || 'Echelon'));
 
-  return { state, start, stop, still, textReady, get running() { return running; }, resetClock() { t0 = performance.now(); } };
+  return { state, start, stop, hold, still, textReady, get running() { return running; }, resetClock() { t0 = performance.now(); } };
 }

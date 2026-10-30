@@ -585,6 +585,14 @@ async function createOrb(canvas, slot) {
     raf = requestAnimationFrame(loop);
   }
   function stop() { running = false; cancelAnimationFrame(raf); }
+  // Freeze the current particle frame without changing its colours.
+  function hold() {
+    const now = performance.now();
+    stop();
+    frozenTime = (now - t0) / 1000;
+    canvas.style.visibility = '';
+    draw(now);
+  }
   // A single still frame (reduced motion / effects off).
   function still() {
     stop();
@@ -614,7 +622,7 @@ async function createOrb(canvas, slot) {
     .then(idle)
     .then(() => setWord($('#hero-title')?.textContent.trim() || 'Echelon'));
 
-  return { state, start, stop, still, textReady, get running() { return running; }, resetClock() { t0 = performance.now(); } };
+  return { state, start, stop, hold, still, textReady, get running() { return running; }, resetClock() { t0 = performance.now(); } };
 }
 
 // ---- src/js/15-journey.js
@@ -1095,6 +1103,8 @@ async function runIntro(orbReady) {
     await wait(1400, token);
   }
   if (token.cancelled) return;
+  // Hold the completed word as a single still frame while the tagline appears.
+  if (orb) orb.hold();
   show(tagline);
   await wait(1000, token);
   if (token.cancelled) return;
@@ -1103,6 +1113,7 @@ async function runIntro(orbReady) {
 
   reveal();
   if (orb) {
+    orb.start();
     await tween(1300, (v) => { orb.state.sphere = v; orb.state.intro = 1 - v; }, ease.inOutCubic, token);
   } else {
     await wait(900, token);

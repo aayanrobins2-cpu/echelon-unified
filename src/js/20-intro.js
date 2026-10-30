@@ -139,6 +139,8 @@ async function runIntro(orbReady) {
     await wait(1400, token);
   }
   if (token.cancelled) return;
+  // Hold the completed word as a single still frame while the tagline appears.
+  if (orb) orb.hold();
   show(tagline);
   await wait(1000, token);
   if (token.cancelled) return;
@@ -147,6 +149,7 @@ async function runIntro(orbReady) {
 
   reveal();
   if (orb) {
+    orb.start();
     await tween(1300, (v) => { orb.state.sphere = v; orb.state.intro = 1 - v; }, ease.inOutCubic, token);
   } else {
     await wait(900, token);
