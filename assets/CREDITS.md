@@ -86,3 +86,7 @@ Redrawn in code from the official Echelon 4.0 artwork, supplied by Nihal in Octo
 - **Echelon 3.0 brochure** (BIS, January 2026): the source of the BIS emblem (see Logos).
 - **Cyberpunk: Edgerunners** was the colour and mood reference for the first version only. Nothing from it was ever in the project, and the redesign doesn't use it at all.
 - `references/font-comparison.png`: a specimen sheet from the first version's font choice. Kept for the record.
+
+## Event artwork (`assets/events/`)
+
+Eight PNGs supplied by the user on 30 October 2026, used unchanged for Game Design, AI Expert System Challenge (title and circuit-brain symbol composed as a single panel), Treasure Hunt, Pitch Tank (the app pitch event), E-Waste Reimagined, Escape Room and Web Design. Their original colours, lettering and full frames are preserved. The AI panel combines attachments 2 and 3 through the page layout.

@@ -299,10 +299,13 @@ function eventCard(ev, L, ui) {
   // On the card itself: when and where. Team size and the rest are in the details.
   const facts = [[ev.time, 'clock'], [ev.venue, 'pin']].filter(([f]) => f).map(([f, i]) => `<li>${icon(i, 'icon')}${txt(f)}</li>`).join('');
   const rules = ev.rules && ev.rules.length ? `<h4>${esc(L.rules)}</h4><ul class="rules">${ev.rules.map((r) => `<li>${txt(r)}</li>`).join('')}</ul>` : '';
+  const artwork = ev.artwork?.length
+    ? `<div class="event-artwork${ev.artwork.length > 1 ? ' event-artwork--combined' : ''}">${ev.artwork.map((image) => `<img src="${esc(image.src)}" width="${Number(image.width)}" height="${Number(image.height)}" alt="" loading="lazy" decoding="async">`).join('')}</div>`
+    : icon(ev.icon, 'ev__icon');
   return `
           <li class="ev" id="${esc(ev.id)}" style="${paletteStyle(ev)}">
             <article class="ev__card" aria-labelledby="${esc(ev.id)}-title">
-              <div class="ev__art art" aria-hidden="true">${icon(ev.icon, 'ev__icon')}</div>
+              <div class="ev__art art${ev.artwork?.length ? ' art--event-logo' : ''}" aria-hidden="true">${artwork}</div>
               <div class="ev__body">
                 <p class="ev__grades"><span class="sr-only">${esc(L.grades)}: </span>Grades ${txt(ev.grades)}</p>
                 <h3 class="ev__title" id="${esc(ev.id)}-title">${txt(ev.name)}</h3>

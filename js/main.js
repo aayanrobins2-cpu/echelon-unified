@@ -1346,7 +1346,9 @@ function initDialog() {
       opener = btn;
       title.textContent = $('.ev__title', card).textContent;
       ['--c1', '--c2', '--c3'].forEach((v) => art.style.setProperty(v, card.style.getPropertyValue(v)));
-      art.innerHTML = $('.ev__art', card).innerHTML;
+      const sourceArt = $('.ev__art', card);
+      art.classList.toggle('art--event-logo', sourceArt.classList.contains('art--event-logo'));
+      art.innerHTML = sourceArt.innerHTML;
       const summary = d.createElement('p');
       summary.textContent = $('.ev__summary', card).textContent;
       const full = $('[data-event-full]', card).cloneNode(true);

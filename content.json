@@ -130,6 +130,7 @@
     "items": [
       {
         "id": "escape-room",
+        "artwork": [{"src": "assets/events/escape-room.png", "width": 886, "height": 634}],
         "name": "Escape Room – Code Breakers",
         "icon": "key",
         "palette": ["#FF7A3D", "#FF4D8D", "#3A0F2E"],
@@ -151,6 +152,7 @@
       },
       {
         "id": "treasure-hunt",
+        "artwork": [{"src": "assets/events/treasure-hunt.png", "width": 852, "height": 378}],
         "name": "Treasure Hunt – Logic & Discovery",
         "icon": "compass",
         "palette": ["#FFB547", "#FF7A3D", "#3A1F05"],
@@ -172,6 +174,7 @@
       },
       {
         "id": "web-designing",
+        "artwork": [{"src": "assets/events/web-design.png", "width": 742, "height": 400}],
         "name": "Web Designing",
         "icon": "browser",
         "palette": ["#FF4D8D", "#FFB547", "#3A0B1E"],
@@ -195,6 +198,7 @@
       },
       {
         "id": "game-design",
+        "artwork": [{"src": "assets/events/game-design.png", "width": 888, "height": 332}],
         "name": "Game Designing",
         "icon": "gamepad",
         "palette": ["#33D1FF", "#3D7BFF", "#0B1640"],
@@ -217,6 +221,7 @@
       },
       {
         "id": "e-waste",
+        "artwork": [{"src": "assets/events/e-waste.png", "width": 868, "height": 382}],
         "name": "E-Waste to Innovation – Product Design",
         "icon": "recycle",
         "palette": ["#3DDC97", "#33D1FF", "#06291F"],
@@ -264,6 +269,7 @@
       },
       {
         "id": "shark-tank",
+        "artwork": [{"src": "assets/events/pitch-tank.png", "width": 854, "height": 384}],
         "name": "Shark Tank – The App Innovation Pitch",
         "icon": "fin",
         "palette": ["#A259FF", "#FF4D8D", "#1F0B3A"],
@@ -287,6 +293,7 @@
       },
       {
         "id": "ai-prolog",
+        "artwork": [{"src": "assets/events/ai-expert-title.png", "width": 762, "height": 254}, {"src": "assets/events/ai-expert-symbol.png", "width": 878, "height": 430}],
         "name": "Artificial Intelligence – Prolog Expert System Challenge",
         "icon": "logic",
         "palette": ["#7CF5D0", "#3D7BFF", "#06233A"],

@@ -98,6 +98,12 @@ for (const e of content.events?.items || []) {
   if (!/^[a-z0-9-]+$/.test(e.id || '')) errors.push(`event id "${e.id}" should use only lowercase letters, numbers and dashes.`);
   if (ids.has(e.id)) errors.push(`event id "${e.id}" is used twice.`);
   ids.add(e.id);
+  for (const image of e.artwork || []) {
+    if (!/^assets\/events\/[a-z0-9-]+\.png$/.test(image.src || '') || !fs.existsSync(file(image.src))) {
+      errors.push(`event "${e.id}" has missing or invalid artwork: ${image.src}`);
+    }
+    if (!(image.width > 0 && image.height > 0)) errors.push(`event "${e.id}" artwork needs positive dimensions.`);
+  }
   if (!ICONS.includes(e.icon)) errors.push(`event "${e.id}" needs an icon, one of: ${ICONS.join(', ')}.`);
   if (!Array.isArray(e.palette) || e.palette.length !== 3 || !e.palette.every((c) => /^#[0-9a-f]{6}$/i.test(c))) {
     errors.push(`event "${e.id}" needs a "palette" of three colours like ["#FF7A3D", "#FF4D8D", "#3A0F2E"].`);
